@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Crear DataFrame vacío
+df = pd.DataFrame(columns=['Input', 'Prompt', "Pre-output",'Output',"Cambios"])
+
+nueva_fila = pd.DataFrame([{
+    "Input": """""",
+    "Prompt": """""",
+    "Pre-output": """""",
+    "Output": """""",
+    "Cambios":""""""
+}])
+
+df = pd.concat([df, nueva_fila], ignore_index=True)
+
+print(df)
+
+
+
+nueva_fila = pd.DataFrame([{
+    "Input": """""",
+    "Prompt": """""",
+    "Pre-output": """""",
+    "Output": """""",
+    "Cambios":""""""
+}])
+
+df = pd.concat([df, nueva_fila], ignore_index=True)
