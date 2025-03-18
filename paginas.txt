@@ -19,7 +19,226 @@ print(df)
 
 nueva_fila = pd.DataFrame([{
     "Input": """""",
-    "Prompt": """""",
+    "Prompt": """📌 Prompt para el Diseño de una Landing Page de Alta Conversión
+
+        🔹 Contexto:
+        
+        # La Historia de Imaginarium AI
+        
+        ## Una Plataforma Revolucionaria
+        
+        Imaginarium AI es una plataforma revolucionaria que permite a los usuarios generar mundos virtuales completos a partir de simples descripciones textuales. Su avanzada inteligencia artificial crea paisajes, ciudades, personajes y culturas, todo interconectado de forma lógica y coherente.
+        
+        Lo que hace única a Imaginarium AI es su accesibilidad: no se necesita ser un artista 3D ni un programador para utilizarla. Los usuarios simplemente describen su visión, y la IA la hace realidad. Esta característica la hace ideal para desarrolladores de videojuegos, artistas conceptuales, escritores, educadores y cualquier persona con una imaginación desbordante.
+        
+        ## Características Principales
+        
+        ### Generación Procedimental Avanzada
+        La plataforma utiliza algoritmos de IA que crean terrenos, vegetación, cuerpos de agua y estructuras de forma realista y variada.
+        
+        ### Personalización Profunda
+        Los usuarios pueden controlar cada detalle: desde el clima y la geografía hasta la arquitectura y las costumbres de los habitantes de sus mundos virtuales.
+        
+        ### Estilos Artísticos Diversos
+        Imaginarium AI ofrece una amplia gama de estilos visuales entre los que elegir: realista, fantasía, ciencia ficción, low-poly, cartoon y más.
+        
+        ### Simulación de Ecosistemas
+        La IA crea relaciones lógicas entre flora, fauna y el entorno, generando ecosistemas creíbles y dinámicos.
+        
+        ### Integración con Motores de Juego
+        Los mundos creados pueden exportarse directamente a Unity, Unreal Engine y otras plataformas populares.
+        
+        ### Colaboración en Tiempo Real
+        La plataforma permite invitar a otros usuarios a co-crear mundos en un entorno colaborativo en línea.
+        
+        ## Planes y Precios
+        
+        Imaginarium AI ofrece diferentes planes para adaptarse a las necesidades de distintos tipos de creadores:
+        
+        ### Plan Básico (U$D 0)
+        - Perfecto para empezar a explorar la creación de mundos con IA
+        - Generación de terrenos básicos
+        - 1 estilo artístico
+        - Resolución limitada
+        - Soporte de la comunidad
+        
+        ### Plan Pro (U$D 29)
+        - Ideal para creadores serios que buscan personalización y calidad
+        - Generación ilimitada
+        - Todos los estilos artísticos
+        - Alta resolución
+        - Soporte prioritario
+        - Acceso a funciones beta
+        
+        ### Plan Estudio (U$D 99)
+        - Para equipos y empresas que necesitan colaboración y funciones avanzadas
+        - Todas las funciones Pro
+        - Múltiples usuarios
+        - Integraciones personalizadas
+        - Soporte dedicado
+        - Acceso API
+        
+        ## Testimonios de Usuarios
+        
+        La plataforma cuenta con valoraciones positivas de sus usuarios:
+        
+        Carlos M., Desarrollador Indie: *"Imaginarium AI cambió la forma en que diseño videojuegos. Ahora puedo crear prototipos de mundos enteros en cuestión de horas."*
+        
+        Ana S., Ilustradora: *"Como artista conceptual, esta herramienta es un sueño hecho realidad. Puedo experimentar con diferentes ideas y estilos visuales sin límites."*
+        
+        Javier G., Game Master: *"Utilizo Imaginarium AI para crear escenarios inmersivos para mis sesiones de rol. ¡Mis jugadores están alucinados!"*
+        
+        ## Filosofía de la Empresa
+        
+        Imaginarium AI fue creada con pasión para inspirar la creatividad. Su lema "Crea Mundos. Sin Límites." refleja su misión de permitir a los usuarios generar universos virtuales completos con IA, desde paisajes exuberantes hasta civilizaciones futuristas, donde el usuario define la historia.
+        
+        La empresa invita a todos a desatar su imaginación y comenzar a crear hoy mismo, ofreciendo una prueba gratuita de su plataforma.
+        
+        © 2024 Imaginarium AI. Todos los derechos reservados.
+        
+        🔹 Requisitos Globales:
+        Tecnologías: Usa solo HTML, CSS y JavaScript Vanilla (sin frameworks).
+        Idioma: Toda la página debe estar en inglés
+        
+        Diseño Moderno y Atractivo:
+        Usa una paleta de colores vibrante y bien equilibrada.
+        Aplica tipografías atractivas, espacios en blanco estratégicos, imágenes de alta calidad e iconos.
+        
+        Copywriting Extendido: El contenido debe ser extenso, persuasivo y detallado, resaltando beneficios y características del producto/servicio de manera clara.
+        
+        Interactividad y Animaciones: Incorpora animaciones avanzadas y sutiles (fade-in, zoom, slide, pulsación en CTAs). Los CTAs deben ser claramente visibles y llamativos.
+        
+        Estructura del Código:
+        
+        Genera el código completo en un solo archivo HTML, incluyendo CSS y JS internos.
+        El diseño debe ser 100% responsivo y optimizado para dispositivos móviles.
+        La navbar y otros menús deben ser completamente funcionales, con transiciones suaves al hacer clic en cualquier sección interna de la página.
+        Importante: No modificar elementos HTML nativos (body, section, h1, p). Usa solo clases CSS personalizadas.
+        Ejemplo correcto (✅ SÍ PERMITIDO):
+        css
+        Copiar
+        Editar
+        .page-body {
+           background-color: #fff;
+           color: #333;
+        }
+        
+        🔹 Secciones y Variantes (Múltiples Opciones en Cada Una)
+        1. Navbar (Siempre Presente)
+        💡 Variantes:
+        
+        Variante 1: Navbar fija con fondo de color primario vibrante y texto en blanco.
+        Variante 2: Navbar semi-transparente que se vuelve opaca al hacer scroll.
+        
+        🎯 Instrucción: Escoge una variante al azar e implementa una navegación clara y atractiva. Los enlaces deben dirigir a secciones internas (mediante id) con transiciones suaves. Si los elementos se superponen, activa automáticamente un menú hamburguesa responsivo con animación sutil.
+        
+        2. Hero Section (100vh)
+        💡 Variantes:
+        
+        Variante 1: Título principal (H1) y subtítulo (H2) sobre una imagen de fondo con efecto de zoom sutil y lento.
+        Variante 2: Sección dividida en dos columnas:
+        Izquierda: Título principal extenso, subtítulo inspirador y CTA destacado.
+        Derecha: Imagen de referencia de alta calidad.
+        
+        🎯 Instrucción: Escoge una variante al azar y amplía el copy con un mensaje extenso y persuasivo sobre la propuesta de valor, beneficios y razones para elegir [INSERTAR PRODUCTO/SERVICIO].
+        
+        3. Información (Características y Beneficios)
+        💡 Variantes:
+        
+        Variante 1: Sección de dos columnas con texto extenso a la izquierda y una imagen con efecto de zoom a la derecha.
+        Variante 2: Formato acordeón interactivo, donde cada bloque se expande al hacer clic.
+        Variante 3: Cards informativas: Múltiples cards con iconos, animaciones y colores.
+        Variante 4: División en tres “carteles” o banners, cada uno destacando un beneficio o característica clave.
+        
+        
+        🎯 Instrucción: Escoge una variante y redacta copywriting extenso y convincente, con ejemplos de uso y beneficios tangibles.
+        
+        4. Tiempo Exclusivo de Oferta
+        💡 Variantes:
+        
+        Variante 1: Contador regresivo con bloques de tiempo destacados y un mensaje que resalte un descuento porcentual exclusivo.
+        Variante 2: Sección minimalista que muestre únicamente el tiempo restante y el porcentaje de descuento en un diseño llamativo.
+        🎯 Instrucción: Escoge una variante y extiende el copy para motivar la acción inmediata, enfatizando la urgencia y exclusividad de la oferta. El contador debe estar completamente funcional y actualizarse en tiempo real.
+        
+        5. Diferentes Puntos de Venta (Sección CTAs)
+        💡 Variantes:
+        
+        Variante 1: Múltiples botones o banners que simulen puntos de venta, inspirados en diseños de plataformas como MercadoLibre o Amazon.
+        Variante 2: Sección con mini-cards que muestren logotipos y breves descripciones de diferentes canales o beneficios, cada uno con un CTA que redirija a la acción.
+        Variante 3: Una fila de iconos interactivos con animaciones al pasar el cursor, representando diversos puntos de venta o métodos de compra.
+        🎯 Instrucción: Escoge una variante y crea un diseño que refuerce la confianza y el atractivo del proceso de compra, usando CTAs claros y convincentes.
+        
+        6. Paquetes de Precios
+        💡 Variantes:
+        
+        Variante 1: Cuadrícula de tres paquetes de precios, donde el paquete central (o uno designado) se resalte como “el mejor”.
+        Variante 2: Diseño de columnas múltiples con diferentes planes, utilizando animaciones al pasar el cursor para destacar el paquete recomendado.
+        Variante 3: Cards de precios con descripciones detalladas y un badge o sello en el paquete óptimo.
+        🎯 Instrucción: Escoge una variante y redacta copy persuasivo que explique cada plan, destacando el valor y el paquete recomendado para incentivar la conversión.
+        
+        
+        7. Ventajas y Desventajas (Comparación)
+        💡 Variantes:
+        
+        Variante 1: Dos cards comparativas, una para ventajas y otra para desventajas, con información detallada.
+        Variante 2: Tabla comparativa que resalte características y beneficios frente a la competencia.
+        🎯 Instrucción: Escoge una variante y desarrolla un contenido comparativo claro y útil que ayude al usuario a tomar una decisión informada.
+        
+        
+        8.Secciones Adicionales (Elegir Una al Azar):
+        Opción 1: Calculadora de ROI - Permite al usuario calcular el retorno de inversión al usar el producto/servicio.
+        Opción 2: Demostración Interactiva - Permite al usuario interactuar con una simulación del producto/servicio.
+        
+        9. Testimonios (Prueba Social)
+        💡 Variantes:
+        
+        Variante 1: Carrusel de testimonial cards con flechas de navegación.
+        Variante 2: Mosaico de testimonios con fotos, nombres, cargos y reseñas detalladas.
+        Variante 3: Cards fijas presentando testimonios, asegurando que el contenido parezca real y auténtico.
+        Variante 4: Testimonios combinados con logos de clientes o marcas destacadas.
+        🎯 Instrucción: Escoge una variante y genera al menos tres testimonios, cada uno con un texto elaborado y creíble, evitando información poco realista.
+        
+        10. Preguntas Frecuentes (FAQs)
+        💡 Variantes:
+        
+        Variante 1: Formato acordeón interactivo donde cada pregunta se expande al hacer clic.
+        Variante 2: Lista desplegable simple con transiciones suaves.
+        Variante 3: Diseño en tarjetas con una breve respuesta visible y la opción de “Leer más” para ampliar.
+        🎯 Instrucción: Escoge una variante y redacta al menos cinco preguntas frecuentes con respuestas claras y concisas que ayuden a despejar dudas comunes.
+        
+        11. Newsletter (Generación de Leads)
+        💡 Variantes:
+        
+        Variante 1: Formulario minimalista con fondo en color secundario.
+        Variante 2: Formulario con incentivo adicional (ej.: “Get 10% off on your first purchase!”).
+        Variante 3: Opción de suscripción vía WhatsApp.
+        Variante 4: Formulario integrado con testimonios de clientes satisfechos.
+        🎯 Instrucción: Escoge una variante y crea un formulario con copy atractivo y persuasivo para captar correos electrónicos.
+        
+        12. Footer (Siempre Presente)
+        💡 Variantes:
+        
+        Variante 1: Footer básico con fondo de color primario vibrante y enlaces animados.
+        Variante 2: Footer con mapa interactivo y dirección de la empresa.
+        Variante 3: Sección con enlaces rápidos a WhatsApp, Telegram y redes sociales.
+        Variante 4: Área de “Partners & Collaborators” con logotipos y descripciones breves.
+        🎯 Instrucción: Escoge una variante y redacta copy extenso y profesional, asegurando que el footer complemente la estética general de la página.
+        
+        🔹 Instrucciones Finales:
+        
+        Genera un código de alta calidad en un solo archivo HTML, con CSS y JS internos.
+        Estilos generales: No apliques estilos a etiquetas HTML nativas (body, section, h1, p). Utiliza solo clases CSS personalizadas.
+        Responsividad: Asegúrate de que la página sea 100% responsiva y visualmente atractiva en dispositivos móviles.
+        Revisión: Revisa exhaustivamente el código antes de entregarlo.
+        Full-Screen Sections: Utiliza secciones a pantalla completa en las áreas que lo requieran para lograr un impacto visual distintivo.
+        Tamaño de la Página: La landing page debe ser “grande” en contenido y estructura, sin preocuparse demasiado por la velocidad de carga, priorizando la calidad del diseño y la conversión.
+        Navegación Interna: Todos los enlaces de la navbar deben dirigir a secciones internas con desplazamiento suave.
+        Menú Hamburguesa: Debe activarse automáticamente en pantallas pequeñas.
+        Botón flotante de WhatsApp en la esquina inferior derecha para contacto inmediato.
+        
+        
+        
+        dame la mejor landing pages que puedas inventado el producto/servicio, paleta de colores y testimonios y copywrting""",
     "Pre-output": """""",
     "Output": """""",
     "Cambios":""""""
