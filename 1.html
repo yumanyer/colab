@@ -156,6 +156,7 @@
         .navbar-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
 
         .navbar-item {
@@ -167,8 +168,8 @@
             font-weight: 500;
             color: #333;
             text-decoration: none;
-            transition: color 0.3s ease;
             position: relative;
+            transition: color 0.7s ease;
         }
 
         .navbar-link:hover {
@@ -633,24 +634,25 @@
         }
 
         .testimonials-container {
-            max-width: 1000px;
+            max-width: 900px; /* Ajustamos el max-width para que solo quepa una card */
             margin: 0 auto;
             position: relative;
+            overflow: hidden; /* Aseguramos que las cards laterales se oculten */
         }
 
         .testimonials-slider {
             display: flex;
             transition: transform 0.5s ease;
         }
-
         .testimonial-card {
-            min-width: 100%;
+            min-width: 100%; /* Cada card ocupa el 100% del contenedor visible */
             padding: 40px;
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
+            box-sizing: border-box; /*  Asegura que padding no aumente el ancho total */
         }
 
         .testimonial-text {
@@ -742,11 +744,11 @@
         }
 
         .testimonial-arrow--prev {
-            left: -25px;
+            left: 0px;
         }
 
         .testimonial-arrow--next {
-            right: -25px;
+            right: 0px;
         }
 
         /* FAQ Section */
@@ -1300,7 +1302,7 @@
                 </div>
             </div>
             <div class="hero-image-container">
-                <img src="hero-image.webp" alt="Virtual World Creation with AI" class="hero-image">
+                <img src="https://res.cloudinary.com/doackpmhu/image/upload/v1742322975/Gemini_Generated_Image_cagltocagltocagl_zmggp5.jpg" alt="Virtual World Creation with AI" class="hero-image">
                 <span class="hero-badge">New Tech</span>
             </div>
         </div>
@@ -1544,9 +1546,6 @@
             </table>
         </div>
     </section>
-
-
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
         <div class="testimonials-heading">
@@ -1559,7 +1558,7 @@
                     <p class="testimonial-text">"Imaginarium AI has completely revolutionized my world-building process. What used to take weeks now takes just hours. The AI is incredibly intuitive and the results are stunning!"</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="testimonial-avatar-1.webp" alt="Avatar of Sarah M.">
+                            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Avatar of Sarah M.">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="testimonial-name">Sarah Miller</h4>
@@ -1571,7 +1570,7 @@
                     <p class="testimonial-text">"The level of customization is beyond anything I've seen before. I can tweak every detail to perfectly match my vision. Plus, the customer support is top-notch and always ready to help."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="testimonial-avatar-2.webp" alt="Avatar of John D.">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Avatar of John D.">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="testimonial-name">John Doe</h4>
@@ -1583,7 +1582,7 @@
                     <p class="testimonial-text">"As a studio owner, Imaginarium AI has been a game-changer for our productivity. We can now iterate faster and explore more creative avenues without increasing our workload. Highly recommended!"</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="testimonial-avatar-3.webp" alt="Avatar of Emily L.">
+                            <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Avatar of Emily L.">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="testimonial-name">Emily Lee</h4>
@@ -1660,7 +1659,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter section">
+    <section id="contact" class="newsletter section">
         <div class="newsletter-container">
             <div class="newsletter-heading">
                 <h2 class="heading-secondary">Stay Updated</h2>
@@ -1729,7 +1728,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2023 Imaginarium AI. All Rights Reserved.
+            © 2025 Imaginarium AI. All Rights Reserved.
         </div>
     </footer>
 
