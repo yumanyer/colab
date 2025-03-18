@@ -25,7 +25,13 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        .hero{
+            background-image: url("https://res.cloudinary.com/doackpmhu/image/upload/v1741728544/unnamed_7_mlykss.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center !important;
 
+        }
         /* Typography */
         .heading-primary {
             font-size: 3.5rem;
@@ -134,17 +140,12 @@
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: #0D2C54;
+            background-color: #0D2C54;
+            color: whitesmoke;
             border: 2px solid #0D2C54;
         }
 
-        .btn-outline:hover {
-            background-color: #0D2C54;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+       
 
         /* Navigation */
         .navbar {
@@ -281,7 +282,7 @@
             animation: slideIn 1.2s ease;
         }
 
-        /* Features Section */
+        /* About Section */
         .features {
             padding: 120px 0;
         }
@@ -329,68 +330,7 @@
             font-size: 1rem;
         }
 
-        /* Timer Section */
-        .timer-section {
-            padding: 80px 0;
-            background-color: #0D2C54;
-            color: white;
-            text-align: center;
-        }
-
-        .timer-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timer-heading {
-            margin-bottom: 40px;
-        }
-
-        .timer-subheading {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .countdown-box {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            min-width: 100px;
-            text-align: center;
-        }
-
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #F7931E;
-        }
-
-        .countdown-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timer-message {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .discount-highlight {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #F7931E;
-        }
-
-        /* Sales Channels */
+        /* Features Section */
         .sales-channels {
             padding: 100px 0;
         }
@@ -437,266 +377,36 @@
             color: #666;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background-color: #F5F7FA;
-        }
-
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .price-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 350px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .price-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .price-card.highlighted {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            border: 2px solid #F7931E;
-        }
-
-        .price-card.highlighted:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .price-card-header {
-            padding: 30px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .price-card.highlighted .price-card-header {
-            background-color: #F7931E;
-            color: white;
-        }
-
-        .package-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .price-card.highlighted .package-name {
-            color: white;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #0D2C54;
-        }
-
-        .price-card.highlighted .price {
-            color: white;
-        }
-
-        .price-period {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .price-card.highlighted .price-period {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .price-features {
-            padding: 30px;
-            list-style: none;
-        }
-
-        .price-feature {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .price-feature-icon {
-            margin-right: 10px;
-            color: #00B2CA;
-            font-size: 1.2rem;
-        }
-
-        .price-cta {
-            padding: 0 30px 30px;
-            text-align: center;
-        }
-
-        .best-value-tag {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: #00B2CA;
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border-bottom-left-radius: 10px;
-        }
-
-        /* Comparison Section */
-        .comparison {
-            padding: 100px 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .comparison-table th {
-            background-color: #0D2C54;
-            color: white;
-            font-size: 1.1rem;
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background-color: #F5F7FA;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .check-icon {
-            color: green;
-            font-size: 1.2rem;
-        }
-
-        .x-icon {
-            color: red;
-            font-size: 1.2rem;
-        }
-
-        /* ROI Calculator */
-        .roi-calculator {
-            padding: 100px 0;
-            background-color: #F5F7FA;
-        }
-
-        .calculator-container {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            margin-top: 50px;
-        }
-
-        .calculator-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #0D2C54;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .calculator-results {
-            background-color: #F5F7FA;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        .result-heading {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0D2C54;
-        }
-
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-label {
-            font-weight: 600;
-        }
-
-        .result-value {
-            font-weight: 700;
-            color: #00B2CA;
-        }
-
-        .result-highlight {
-            font-size: 1.2rem;
-            color: #F7931E;
-        }
-
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
         }
 
         .testimonials-container {
+            max-width: 900px; /* Ajustamos el max-width para que solo quepa una card */
+            margin: 0 auto;
             position: relative;
+            overflow: hidden; /* Aseguramos que las cards laterales se oculten */
         }
 
         .testimonial-cards {
+            min-width: 100%; /* Cada card ocupa el 100% del contenedor visible */
             display: flex;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            padding: 20px 0;
+            flex-direction: row; /* En fila para slider horizontal */
+            transition: transform 0.5s ease-in-out; /* Suaviza la animación */
         }
 
         .testimonial-card {
-            flex: 0 0 calc(33.333% - 20px);
+            flex: 0 0 100%; /* 80% width for larger screens, adjust as needed */
             min-width: 300px;
             margin-right: 30px;
             background-color: white;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            box-sizing: border-box; /*  Asegura que padding no aumente el ancho total */
+
         }
 
         .testimonial-text {
@@ -774,6 +484,51 @@
             font-size: 1.2rem;
         }
 
+        /* Comparison Section */
+        .comparison {
+            padding: 100px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: #0D2C54;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #F5F7FA;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: green;
+            font-size: 1.2rem;
+        }
+
+        .x-icon {
+            color: red;
+            font-size: 1.2rem;
+        }
+
         /* FAQ Section */
         .faq {
             padding: 100px 0;
@@ -826,7 +581,7 @@
 
         /* Newsletter */
         .newsletter {
-            padding: 100px 0;
+            padding: 80px 0; /* Reduced top/bottom padding */
             background-color: #0D2C54;
             color: white;
         }
@@ -839,27 +594,37 @@
 
         .newsletter-form {
             display: flex;
+            flex-direction: column; /* Stack input and button vertically */
+            align-items: center;  /* Center items horizontally */
             margin-top: 30px;
-            border-radius: 50px;
+            border-radius: 10px; /* Reduced border radius */
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+            width: 80%; /* Adjusted width */
+            max-width: 400px;
+            margin: 30px auto 0;
         }
 
         .newsletter-input {
             flex: 1;
-            padding: 15px 25px;
+            padding: 12px 20px; /* Reduced padding */
             border: none;
             font-size: 1rem;
+            width: 100%;  /* Fill the container width */
+            border-radius: 5px;
         }
 
         .newsletter-button {
-            padding: 15px 30px;
+            padding: 12px 30px; /* Reduced padding */
             background-color: #F7931E;
             color: white;
             border: none;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
         }
 
         .newsletter-button:hover {
@@ -868,7 +633,48 @@
 
         .newsletter-incentive {
             margin-top: 20px;
-            font-size: 1.1rem;
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0; /* Reduced top/bottom padding */
+            background-color: #0D2C54;
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-details {
+            margin-top: 20px;
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center icon and text */
+            gap: 10px;  /* Space between icon and text */
+        }
+
+        .contact-details i {
+            margin-right: 5px;
+            font-size: 1.2rem; /* Adjusted icon size */
+        }
+
+        .contact-details a {
+            color: #F7931E;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #e87d0d;
         }
 
         /* Footer */
@@ -1002,22 +808,22 @@
         }
 
         @keyframes slideIn {
-            from { 
+            from {
                 transform: translateX(50px);
                 opacity: 0;
             }
-            to { 
+            to {
                 transform: translateX(0);
                 opacity: 1;
             }
         }
 
         @keyframes slideUp {
-            from { 
+            from {
                 transform: translateY(30px);
                 opacity: 0;
             }
-            to { 
+            to {
                 transform: translateY(0);
                 opacity: 1;
             }
@@ -1039,6 +845,10 @@
             .hero-image {
                 height: 70%;
             }
+            .comparison-table {
+                overflow-x: auto; /* Enable horizontal scroll for small screens */
+                display: block; /* Make table block to enable scroll */
+            }
         }
 
         @media (max-width: 992px) {
@@ -1054,34 +864,22 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .pricing-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .price-card {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-
-            .price-card.highlighted {
-                transform: scale(1);
-            }
-
-            .price-card.highlighted:hover {
-                transform: translateY(-10px);
-            }
-
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .calculator-form {
-                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
+
+            .testimonial-card {
+                flex: 0 0 100%;  /* Take almost full width on smaller screens */
+                margin-right: 20px;
+            }
+
+            .testimonials-cards {
+                margin-left: 15px;
+            }
+
             .navbar-links {
                 position: fixed;
                 top: 80px;
@@ -1133,405 +931,457 @@
                 grid-template-columns: 1fr;
             }
 
-            .countdown {
-                flex-wrap: wrap;
-            }
-
             .channels-container {
                 flex-direction: column;
             }
 
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        
+        }
+
+            @media (max-width: 600px) {
             .testimonial-card {
-                flex: 0 0 100%;
+                flex: 0 0 100%;  /* Take almost full width on smaller screens */
+                margin-right: 0px;
             }
 
-            .comparison-table {
-                display: block;
-                overflow-x: auto;        }
-
-.footer-container {
-    grid-template-columns: 1fr;
-}
-}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+           .testimonials-cards {
+                margin-left: 0px;
+           }
+           .comparison-table {
+                overflow-x: auto; /* Enable horizontal scroll for small screens */
+                display: block; /* Make table block to enable scroll */
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="page-body">
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-<div class="container navbar-container">
-<a href="#" class="navbar-logo">
-    <i class="fas fa-running navbar-logo-icon"></i> Apex Athletics
-</a>
-<ul class="navbar-links">
-    <li class="navbar-link"><a href="#about">Acerca de</a></li>
-    <li class="navbar-link"><a href="#benefits">Beneficios</a></li>
-    <li class="navbar-link"><a href="#features">Características</a></li>
-    <li class="navbar-link"><a href="#testimonials">Testimonios</a></li>
-    <li class="navbar-link"><a href="#contact">Contacto</a></li>
-</ul>
- <!-- Mobile Toggle Button -->
- <div class="navbar-toggle">
-    <span class="toggle-bar"></span>
-    <span class="toggle-bar"></span>
-    <span class="toggle-bar"></span>
-</div>
-</div>
+    <div class="container navbar-container">
+        <a href="#" class="navbar-logo">
+            <i class="fas fa-running navbar-logo-icon"></i> Apex Athletics
+        </a>
+        <ul class="navbar-links">
+            <li class="navbar-link"><a href="#about">About</a></li>
+            <li class="navbar-link"><a href="#benefits">Benefits</a></li>
+            <li class="navbar-link"><a href="#features">Features</a></li>
+            <li class="navbar-link"><a href="#testimonials">Testimonials</a></li>
+            <li class="navbar-link"><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Mobile Toggle Button -->
+        <div class="navbar-toggle">
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+        </div>
+    </div>
 </nav>
 
 <!-- Hero Section -->
 <section class="hero">
-<div class="container hero-content">
-<h1 class="heading-primary animate-fade">Potencia tu rendimiento con equipamiento deportivo de élite</h1>
-<p class="hero-subtitle animate-fade">Descubre por qué los atletas profesionales confían en Apex Athletics para llevar su rendimiento al siguiente nivel.</p>
-<div class="hero-cta animate-slide-up">
-    <a href="#" class="btn btn-primary">Solicitar Catálogo</a>
-    <a href="#products" class="btn btn-outline">Descubrir Productos</a>
-</div>
-</div>
+    <div class="container hero-content">
+        <h1 class="heading-primary animate-fade">Power Your Performance with Elite Sports Equipment</h1>
+        <p class="hero-subtitle animate-fade">Discover why professional athletes trust Apex Athletics to take their performance to the next level.</p>
+        <div class="hero-cta animate-slide-up">
+            <a href="#" class="btn btn-primary">Request Catalog</a>
+            <a href="#products" class="btn btn-outline">Discover Products</a>
+        </div>
+    </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="features bg-light">
-<div class="container">
-<div class="section-intro animate-slide-up">
-    <h2 class="heading-secondary">Acerca de Apex Athletics</h2>
-    <p class="paragraph">Creamos equipamiento deportivo de alto rendimiento con los materiales más avanzados para llevarte más allá de tus límites. Fundada en 2015 por un grupo de deportistas profesionales y entrenadores de élite, Apex Athletics nació de la necesidad de contar con equipamiento que realmente marcara la diferencia en el rendimiento deportivo. Con un enfoque basado en la innovación, la durabilidad y el desempeño óptimo, nos hemos establecido como líderes en el mercado de equipamiento deportivo de alta gama. Cada producto que desarrollamos pasa por un riguroso proceso de diseño, prototipado y pruebas con atletas profesionales antes de llegar al mercado. Esta filosofía de "excelencia sin compromisos" es la razón por la que deportistas de élite en todo el mundo confían en Apex Athletics.</p>
-</div>
-<div class="features-container animate-slide-up">
-    <div class="feature-card">
-        <i class="fas fa-rocket feature-icon"></i>
-        <h3 class="feature-title">Rendimiento Superior</h3>
-        <p class="feature-text">Nuestros productos están diseñados para optimizar tu desempeño, proporcionando el equilibrio perfecto entre funcionalidad, comodidad y durabilidad.</p>
+    <div class="container">
+        <div class="section-intro animate-slide-up">
+            <h2 class="heading-secondary">About Apex Athletics</h2>
+            <p class="paragraph">We create high-performance sports equipment with the most advanced materials to take you beyond your limits. Founded in 2015 by a group of professional athletes and elite coaches, Apex Athletics was born from the need for equipment that truly makes a difference in sports performance. With an approach based on innovation, durability, and optimal performance, we have established ourselves as leaders in the high-end sports equipment market. Every product we develop goes through a rigorous process of design, prototyping and testing with professional athletes before reaching the market. This philosophy of "excellence without compromise" is the reason why elite athletes around the world trust Apex Athletics.</p>
+        </div>
+        <div class="features-container animate-slide-up">
+            <div class="feature-card">
+                <i class="fas fa-rocket feature-icon"></i>
+                <h3 class="feature-title">Superior Performance</h3>
+                <p class="feature-text">Our products are designed to optimize your performance, providing the perfect balance between functionality, comfort and durability.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-microscope feature-icon"></i>
+                <h3 class="feature-title">Advanced Technology</h3>
+                <p class="feature-text">We use the most innovative materials and patented technologies to create equipment that redefines the standards in high-level sport.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3 class="feature-title">Competitive Advantage</h3>
+                <p class="feature-text">Every detail is carefully considered to give you that additional advantage that makes the difference between a good result and an exceptional result.</p>
+            </div>
+        </div>
     </div>
-    <div class="feature-card">
-        <i class="fas fa-microscope feature-icon"></i>
-        <h3 class="feature-title">Tecnología Avanzada</h3>
-        <p class="feature-text">Utilizamos los materiales más innovadores y tecnologías patentadas para crear equipamiento que redefine los estándares en el deporte de alto nivel.</p>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-bolt feature-icon"></i>
-        <h3 class="feature-title">Ventaja Competitiva</h3>
-        <p class="feature-text">Cada detalle está cuidadosamente considerado para darte esa ventaja adicional que marca la diferencia entre un buen resultado y un resultado excepcional.</p>
-    </div>
-</div>
-</div>
 </section>
 
 <!-- Features Section -->
-<section id="features" class="sales-channels">
-<div class="container">
-<div class="section-intro animate-slide-up">
-    <h2 class="heading-secondary">Características de Nuestros Productos</h2>
-    <p class="paragraph">Nuestro equipamiento deportivo incorpora lo último en innovación y diseño para garantizar un rendimiento superior.</p>
-</div>
-<div class="channels-container animate-slide-up">
-    <div class="channel-card">
-        <i class="fas fa-weight-hanging channel-icon"></i>
-        <h3 class="channel-title">Materiales Ultra-Ligeros</h3>
-        <p class="channel-text">Utilizamos aleaciones especiales y compuestos avanzados que reducen significativamente el peso sin comprometer la resistencia.</p>
+<section id="benefits" class="sales-channels">
+    <div class="container">
+        <div class="section-intro animate-slide-up">
+            <h2 class="heading-secondary">Features of Our Products</h2>
+            <p class="paragraph">Our sports equipment incorporates the latest in innovation and design to guarantee superior performance.</p>
+        </div>
+        <div class="channels-container animate-slide-up">
+            <div class="channel-card">
+                <i class="fas fa-weight-hanging channel-icon"></i>
+                <h3 class="channel-title">Ultra-Light Materials</h3>
+                <p class="channel-text">We use special alloys and advanced compounds that significantly reduce weight without compromising resistance.</p>
+            </div>
+            <div class="channel-card">
+                <i class="fas fa-chart-line channel-icon"></i>
+                <h3 class="channel-title">Performance Analysis</h3>
+                <p class="channel-text">Our premium products include integrated sensors that allow you to monitor and analyze your performance in real time.</p>
+            </div>            <div class="channel-card">
+                <i class="fas fa-shield-alt channel-icon"></i>
+                <h3 class="channel-title">Exceptional Durability</h3>
+                <p class="channel-text">Designed to withstand intensive use, our products maintain their optimal performance even in the most demanding conditions.</p>
+            </div>
+            <div class="channel-card">
+                <i class="fas fa-wrench channel-icon"></i>
+                <h3 class="channel-title">Advanced Customization</h3>
+                <p class="channel-text">We offer multiple configuration options to adapt our products to your specific needs and preferences.</p>
+            </div>
+            <div class="channel-card">
+                <i class="fas fa-ruler-combined channel-icon"></i>
+                <h3 class="channel-title">Millimetric Precision</h3>
+                <p class="channel-text">Manufactured with minimal tolerances to guarantee absolute precision in every movement and execution.</p>
+            </div>
+            <div class="channel-card">
+                <i class="fas fa-recycle channel-icon"></i>
+                <h3 class="channel-title">Sustainable Materials</h3>
+                <p class="channel-text">Committed to the environment, we use recycled materials and production processes respectful of the planet.</p>
+            </div>
+        </div>
     </div>
-    <div class="channel-card">
-        <i class="fas fa-chart-line channel-icon"></i>
-        <h3 class="channel-title">Análisis de Rendimiento</h3>
-        <p class="channel-text">Nuestros productos premium incluyen sensores integrados que te permiten monitorear y analizar tu rendimiento en tiempo real.</p>
-    </div>
-    <div class="channel-card">
-        <i class="fas fa-shield-alt channel-icon"></i>
-        <h3 class="channel-title">Durabilidad Excepcional</h3>
-        <p class="channel-text">Diseñados para soportar el uso intensivo, nuestros productos mantienen sus prestaciones óptimas incluso en las condiciones más exigentes.</p>
-    </div>
-    <div class="channel-card">
-        <i class="fas fa-wrench channel-icon"></i>
-        <h3 class="channel-title">Personalización Avanzada</h3>
-        <p class="channel-text">Ofrecemos múltiples opciones de configuración para adaptar nuestros productos a tus necesidades específicas y preferencias.</p>
-    </div>
-    <div class="channel-card">
-        <i class="fas fa-ruler-combined channel-icon"></i>
-        <h3 class="channel-title">Precisión Milimétrica</h3>
-        <p class="channel-text">Fabricados con tolerancias mínimas para garantizar una precisión absoluta en cada movimiento y ejecución.</p>
-    </div>
-     <div class="channel-card">
-        <i class="fas fa-recycle channel-icon"></i>
-        <h3 class="channel-title">Materiales Sostenibles</h3>
-        <p class="channel-text">Comprometidos con el medio ambiente, utilizamos materiales reciclados y procesos de producción respetuosos con el planeta.</p>
-    </div>
-</div>
-</div>
 </section>
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials bg-light">
-<div class="container">
-<div class="section-intro animate-slide-up">
-    <h2 class="heading-secondary">Lo que dicen nuestros usuarios</h2>
-    <p class="paragraph">Atletas profesionales y aficionados confían en la calidad y rendimiento de Apex Athletics.</p>
-</div>
-<div class="testimonials-container animate-slide-up">
-    <div class="testimonial-cards">
-        <div class="testimonial-card">
-            <p class="testimonial-text">"Desde que empecé a utilizar el equipamiento de Apex Athletics, mi rendimiento ha mejorado considerablemente. La calidad es excepcional y la durabilidad supera con creces la de otras marcas premium que he utilizado anteriormente. Sin duda, ha sido una inversión que ha transformado mi entrenamiento."</p>
-            <div class="testimonial-author">
-                <img src="http://127.0.0.1:5500/api/placeholder/100/100" alt="Carlos Rodríguez" class="author-image">
-                <div class="author-info">
-                    <span class="author-name">Carlos Rodríguez</span>
-                    <span class="author-title">Atleta Olímpico - Atletismo</span>
+    <div class="container">
+        <div class="section-intro animate-slide-up">
+            <h2 class="heading-secondary">What Our Users Say</h2>
+            <p class="paragraph">Professional athletes and amateurs trust the quality and performance of Apex Athletics.</p>
+        </div>
+        <div class="testimonials-container animate-slide-up">
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Since I started using Apex Athletics equipment, my performance has improved considerably. The quality is exceptional and the durability far exceeds that of other premium brands I have used before. Without a doubt, it has been an investment that has transformed my training."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Carlos Rodríguez" class="author-image">
+                        <div class="author-info">
+                            <span class="author-name">Carlos Rodríguez</span>
+                            <span class="author-title">Olympic Athlete - Athletics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a professional trainer, I have tested equipment from dozens of brands during my career. I can say without hesitation that Apex Athletics offers the best balance between quality, precision and durability. My athletes have experienced significant improvements since we implemented their equipment into our routines."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Marta Jiménez" class="author-image">
+                        <div class="author-info">
+                            <span class="author-name">Marta Jiménez</span>
+                            <span class="author-title">National Trainer - CrossFit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The personalization offered by Apex Athletics is incomparable. After years of dealing with generic equipment that never fully adapted to my needs, I finally found a brand that understands that each athlete is unique. Their attention to detail and customer service is as exceptional as their products."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Ricardo Méndez" class="author-image">
+                        <div class="author-info">
+                            <span class="author-name">Ricardo Méndez</span>
+                            <span class="author-title">Professional Triathlete</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="testimonial-card">
-            <p class="testimonial-text">"Como entrenadora profesional, he probado equipamiento de decenas de marcas durante mi carrera. Puedo afirmar sin dudarlo que Apex Athletics ofrece el mejor equilibrio entre calidad, precisión y durabilidad. Mis atletas han experimentado mejoras significativas desde que implementamos su equipamiento en nuestras rutinas."</p>
-            <div class="testimonial-author">
-                <img src="http://127.0.0.1:5500/api/placeholder/100/100" alt="Marta Jiménez" class="author-image">
-                <div class="author-info">
-                    <span class="author-name">Marta Jiménez</span>
-                    <span class="author-title">Entrenadora Nacional - CrossFit</span>
+            <div class="testimonial-controls">
+                <div class="testimonial-control" onclick="scrollTestimonials(-1)">
+                    <i class="fas fa-chevron-left testimonial-control-icon"></i>
                 </div>
-            </div>
-        </div>
-        <div class="testimonial-card">
-            <p class="testimonial-text">"La personalización que ofrece Apex Athletics es incomparable. Después de años lidiando con equipamiento genérico que nunca se adaptaba completamente a mis necesidades, por fin encontré una marca que entiende que cada atleta es único. Su atención al detalle y servicio al cliente es tan excepcional como sus productos."</p>
-            <div class="testimonial-author">
-                <img src="http://127.0.0.1:5500/api/placeholder/100/100" alt="Ricardo Méndez" class="author-image">
-                <div class="author-info">
-                    <span class="author-name">Ricardo Méndez</span>
-                    <span class="author-title">Triatleta Profesional</span>
+                <div class="testimonial-control" onclick="scrollTestimonials(1)">
+                    <i class="fas fa-chevron-right testimonial-control-icon"></i>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
 </section>
 
 <!-- Comparison Section -->
-<section class="comparison">
-<div class="container">
-<div class="section-intro animate-slide-up">
-    <h2 class="heading-secondary">¿Por qué somos diferentes?</h2>
-    <p class="paragraph">Comparativa con otras soluciones del mercado.</p>
-</div>
-<table class="comparison-table animate-slide-up">
-    <thead>
-        <tr>
-            <th>Características</th>
-            <th>Apex Athletics</th>
-            <th>Marcas Premium</th>
-            <th>Marcas Convencionales</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Materiales de última generación</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Personalización avanzada</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Análisis de rendimiento integrado</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Garantía extendida (5 años)</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Testado por atletas profesionales</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Soporte técnico especializado</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-        <tr>
-            <td>Certificación para competición oficial</td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-check check-icon"></i></td>
-            <td><i class="fas fa-times x-icon"></i></td>
-        </tr>
-    </tbody>
-</table>
-</div>
+<section id="features" class="comparison">
+    <div class="container">
+        <div class="section-intro animate-slide-up">
+            <h2 class="heading-secondary">Why Are We Different?</h2>
+            <p class="paragraph">Comparison with other solutions on the market.</p>
+        </div>
+        <table class="comparison-table animate-slide-up">
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Apex Athletics</th>
+                    <th>Premium Brands</th>
+                    <th>Conventional Brands</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Latest Generation Materials</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Advanced Customization</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Integrated Performance Analysis</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Extended Warranty (5 Years)</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Tested by Professional Athletes</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Specialized Technical Support</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Certification for Official Competition</td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-check check-icon"></i></td>
+                    <td><i class="fas fa-times x-icon"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <!-- FAQ Section -->
 <section id="faq" class="faq">
-<div class="container">
-<div class="section-intro animate-slide-up">
-    <h2 class="heading-secondary">Preguntas Frecuentes</h2>
-    <p class="paragraph">Respuestas a las dudas más comunes sobre nuestros productos y servicios.</p>
-</div>
-<div class="faq-container animate-slide-up">
-    <div class="faq-item">
-        <div class="faq-question">
-            ¿Cuánto tiempo tardan en entregar los pedidos?
-            <i class="fas fa-chevron-down faq-icon"></i>
+    <div class="container">
+        <div class="section-intro animate-slide-up">
+            <h2 class="heading-secondary">Frequently Asked Questions</h2>
+            <p class="paragraph">Answers to the most common questions about our products and services.</p>
         </div>
-        <div class="faq-answer">
-            <p class="paragraph">Nuestro tiempo de entrega estándar es de 3-5 días hábiles para productos en stock. Para equipamiento personalizado, el plazo es de 10-15 días hábiles. Ofrecemos opciones de envío prioritario que pueden reducir estos tiempos a la mitad con un costo adicional.</p>
+        <div class="faq-container animate-slide-up">
+            <div class="faq-item">
+                <div class="faq-question">
+                    How long does it take to deliver orders?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p class="paragraph">Our standard delivery time is 3-5 business days for products in stock. For personalized equipment, the term is 10-15 business days. We offer priority shipping options that can reduce these times by half at an additional cost.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you offer programs for clubs and sports teams?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p class="paragraph">Absolutely! We have special programs for clubs and sports teams that include volume discounts, equipment personalization with the team colors and logo, and a dedicated technical advisor. Contact our institutional sales department for more information.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How does the personalization process work?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p class="paragraph">The process begins with a detailed consultation where we analyze your specific needs, measurements and preferences. Our design team then creates a virtual prototype that you can review and request modifications. Once approved, we manufacture your personalized equipment with the agreed specifications.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What guarantee do you offer with your products?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p class="paragraph">All our products have a standard 2-year warranty that covers manufacturing defects and materials. Additionally, we offer an optional 5-year extended warranty. The warranty includes repair or replacement of the product, and in specific cases, technical improvements if the original model has been discontinued.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you have physical stores where I can try the products?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p class="paragraph">We have showrooms in major cities where you can try our products by appointment. In addition, we collaborate with elite training centers where you can experience our equipment under real conditions of use. Consult our contact section to find the nearest point.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="faq-item">
-        <div class="faq-question">
-            ¿Ofrecen programas para clubs y equipos deportivos?
-            <i class="fas fa-chevron-down faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-            <p class="paragraph">¡Absolutamente! Contamos con programas especiales para clubs y equipos deportivos que incluyen descuentos por volumen, personalización de equipamiento con los colores y logo del equipo, y un asesor técnico dedicado. Contacta con nuestro departamento de ventas institucionales para más información.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question">
-            ¿Cómo funciona el proceso de personalización?
-            <i class="fas fa-chevron-down faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-            <p class="paragraph">El proceso comienza con una consulta detallada donde analizamos tus necesidades específicas, medidas y preferencias. Nuestro equipo de diseño crea entonces un prototipo virtual que puedes revisar y solicitar modificaciones. Una vez aprobado, fabricamos tu equipamiento personalizado con las especificaciones acordadas.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question">
-            ¿Qué garantía ofrecen con sus productos?
-            <i class="fas fa-chevron-down faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-            <p class="paragraph">Todos nuestros productos cuentan con una garantía estándar de 2 años que cubre defectos de fabricación y materiales. Adicionalmente, ofrecemos una garantía extendida de 5 años opcional. La garantía incluye reparación o reemplazo del producto, y en casos específicos, mejoras técnicas si el modelo original ha sido descontinuado.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question">
-            ¿Tienen tiendas físicas donde pueda probar los productos?
-            <i class="fas fa-chevron-down faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-            <p class="paragraph">Contamos con showrooms en las principales ciudades donde puedes probar nuestros productos con cita previa. Además, colaboramos con centros de entrenamiento de élite donde puedes experimentar nuestro equipamiento en condiciones reales de uso. Consulta nuestra sección de contacto para encontrar el punto más cercano.</p>
-        </div>
-    </div>
-</div>
-</div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="newsletter">
-<div class="container newsletter-container">
-<h2 class="heading-secondary animate-fade">Contacto</h2>
-<p class="paragraph animate-fade">Estamos aquí para responder tus preguntas y ayudarte a encontrar el equipamiento perfecto para tus necesidades.</p>
-<div class="contact-details animate-slide-up">
-    <p><i class="fas fa-map-marker-alt"></i> Dirección: Avenida del Deporte, 123, 28001 Madrid, España</p>
-    <p><i class="fas fa-phone"></i> Teléfono: +34 91 123 45 67 - Lun - Vie: 9:00 - 18:00</p>
-    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@apexathletics.com">info@apexathletics.com</a> / <a href="mailto:soporte@apexathletics.com">soporte@apexathletics.com</a></p>
-</div>
-</div>
+<!-- Newsletter & Contact Section -->
+<section id="contact" class="newsletter contact">
+    <div class="container">
+        <div class="newsletter-container">
+            <h2 class="heading-secondary animate-fade" style="color: whitesmoke;">Stay Updated & Contact Us</h2>
+            <p class="paragraph animate-fade">Subscribe to our newsletter for exclusive deals and contact us for any questions!</p>
+
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email">
+                <button class="newsletter-button">Subscribe</button>
+            </div>
+
+            <p class="newsletter-incentive animate-fade">Get 10% off your first order when you subscribe!</p>
+
+            <div class="contact-details animate-slide-up">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Sports Avenue, Cityville, USA</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@apexathletics.com">info@apexathletics.com</a></p>
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <!-- Footer -->
 <footer class="footer bg-dark">
-<div class="container footer-container">
-<div class="footer-col">
-    <h3>Productos</h3>
-    <ul class="footer-links">
-        <li class="footer-link"><a href="#"><i class="fas fa-dumbbell footer-link-icon"></i> Equipamiento de Fuerza</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-running footer-link-icon"></i> Equipamiento de Resistencia</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-tools footer-link-icon"></i> Accesorios Técnicos</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-heartbeat footer-link-icon"></i> Línea de Recuperación</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-palette footer-link-icon"></i> Personalización</a></li>
-    </ul>
-</div>
-<div class="footer-col">
-    <h3>Empresa</h3>
-    <ul class="footer-links">
-        <li class="footer-link"><a href="#about"><i class="fas fa-info-circle footer-link-icon"></i> Sobre Nosotros</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-users footer-link-icon"></i> Nuestro Equipo</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-laptop-code footer-link-icon"></i> Tecnología</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-leaf footer-link-icon"></i> Compromiso Sostenible</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-trophy footer-link-icon"></i> Embajadores</a></li>
-    </ul>
-</div>
-<div class="footer-col">
-    <h3>Soporte</h3>
-    <ul class="footer-links">
-        <li class="footer-link"><a href="#contact"><i class="fas fa-envelope footer-link-icon"></i> Contacto</a></li>
-        <li class="footer-link"><a href="#faq"><i class="fas fa-question-circle footer-link-icon"></i> FAQ</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-truck footer-link-icon"></i> Envíos y Devoluciones</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-shield-check footer-link-icon"></i> Garantía</a></li>
-        <li class="footer-link"><a href="#"><i class="fas fa-file-contract footer-link-icon"></i> Política de Privacidad</a></li>
-    </ul>
-</div>
-<div class="footer-col">
-    <h3>Síguenos</h3>
-    <div class="social-links">
-        <a href="#" class="social-link"><i class="fab fa-facebook-f social-icon"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-twitter social-icon"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-instagram social-icon"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-youtube social-icon"></i></a>
+    <div class="container footer-container">
+        <div class="footer-col">
+            <h3>Products</h3>
+            <ul class="footer-links">
+                <li class="footer-link"><a href="#"><i class="fas fa-dumbbell footer-link-icon"></i> Strength Equipment</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-running footer-link-icon"></i> Resistance Equipment</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-tools footer-link-icon"></i> Technical Accessories</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-heartbeat footer-link-icon"></i> Recovery Line</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-palette footer-link-icon"></i> Personalization</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul class="footer-links">
+                <li class="footer-link"><a href="#about"><i class="fas fa-info-circle footer-link-icon"></i> About Us</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-users footer-link-icon"></i> Our Team</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-laptop-code footer-link-icon"></i> Technology</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-leaf footer-link-icon"></i> Sustainable Commitment</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-trophy footer-link-icon"></i> Ambassadors</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Support</h3>
+            <ul class="footer-links">
+                <li class="footer-link"><a href="#contact"><i class="fas fa-envelope footer-link-icon"></i> Contact</a></li>
+                <li class="footer-link"><a href="#faq"><i class="fas fa-question-circle footer-link-icon"></i> FAQ</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-truck footer-link-icon"></i> Shipping & Returns</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-shield-check footer-link-icon"></i> Warranty</a></li>
+                <li class="footer-link"><a href="#"><i class="fas fa-file-contract footer-link-icon"></i> Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f social-icon"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter social-icon"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram social-icon"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube social-icon"></i></a>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-<div class="footer-bottom">
-<p class="copyright">© 2025 Apex Athletics. Todos los derechos reservados.</p>
-</div>
+    <div class="footer-bottom">
+        <p class="copyright">© 2025 Apex Athletics. All rights reserved.</p>
+    </div>
 </footer>
 
 <!-- WhatsApp Button -->
 <a href="https://wa.me/TUNUMERODEWHATSAPP" class="whatsapp-button" target="_blank">
-<i class="fab fa-whatsapp whatsapp-icon"></i>
+    <i class="fab fa-whatsapp whatsapp-icon"></i>
 </a>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
- // Mobile menu toggle
- const navbarToggle = document.querySelector('.navbar-toggle');
- const navbarLinks = document.querySelector('.navbar-links');
+     // Mobile menu toggle
+     const navbarToggle = document.querySelector('.navbar-toggle');
+     const navbarLinks = document.querySelector('.navbar-links');
 
- navbarToggle.addEventListener('click', function() {
-     navbarLinks.classList.toggle('active');
-     navbarToggle.classList.toggle('active'); // Optional: Animate the toggle button itself
- });
-
- // Close mobile menu when clicking outside
- document.addEventListener('click', function(event) {
-     const isClickInsideNavbar = navbarLinks.contains(event.target) || navbarToggle.contains(event.target);
-     if (!isClickInsideNavbar && navbarLinks.classList.contains('active')) {
-         navbarLinks.classList.remove('active');
-         navbarToggle.classList.remove('active'); // Optional: Revert toggle button animation
-     }
- });
-
- // FAQ Accordion
- const faqItems = document.querySelectorAll('.faq-item');
- faqItems.forEach(item => {
-     const question = item.querySelector('.faq-question');
-     question.addEventListener('click', () => {
-         item.classList.toggle('active');
+     navbarToggle.addEventListener('click', function() {
+         navbarLinks.classList.toggle('active');
+         navbarToggle.classList.toggle('active'); // Optional: Animate the toggle button itself
      });
- });
+
+     // Close mobile menu when clicking outside
+     document.addEventListener('click', function(event) {
+         const isClickInsideNavbar = navbarLinks.contains(event.target) || navbarToggle.contains(event.target);
+         if (!isClickInsideNavbar && navbarLinks.classList.contains('active')) {
+             navbarLinks.classList.remove('active');
+             navbarToggle.classList.remove('active'); // Optional: Revert toggle button animation
+         }
+     });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
 });
+
+
+// Índice del testimonial actual
+let currentIndex = 0;
+  // Selecciona el contenedor de cards y los elementos individuales
+  const container = document.querySelector('.testimonials-container');
+  const cardsContainer = document.querySelector('.testimonial-cards');
+  const cards = document.querySelectorAll('.testimonial-card');
+  
+  // Función para mostrar la card según el índice
+  function showTestimonial(index) {
+    // Se asume que el ancho visible es el ancho del contenedor
+    const containerWidth = container.offsetWidth;
+    cardsContainer.style.transform = `translateX(-${index * containerWidth}px)`;
+  }
+  
+  // Función que se ejecuta al hacer clic en las flechas
+  function scrollTestimonials(direction) {
+    const totalCards = cards.length;
+    // Actualiza el índice según la dirección (-1 o 1)
+    currentIndex += direction;
+    // Limita el índice para que no se salga del rango
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    } else if (currentIndex >= totalCards) {
+      currentIndex = totalCards - 1;
+    }
+    // Muestra el testimonial correspondiente
+    showTestimonial(currentIndex);
+  }
 </script>
 
 </body>
