@@ -1,0 +1,1653 @@
+
+            
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>CryptoNFT Solutions | The Future of Your Digital Assets</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+                <style>
+                    :root {
+                        --primary-color: #6e00ff;
+                        --secondary-color: #00ffaa;
+                        --accent-color: #ff00aa;
+                        --dark-bg: #0a0b1a;
+                        --darker-bg: #050711;
+                        --card-bg: rgba(20, 22, 48, 0.7);
+                        --glass-effect: rgba(255, 255, 255, 0.1);
+                        --text-color: #ffffff;
+                        --text-secondary: #b3b7ff;
+                    }
+                
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+                
+                    .page-body {
+                        background-color: var(--dark-bg);
+                        color: var(--text-color);
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        line-height: 1.6;
+                        overflow-x: hidden;
+                    }
+                
+                    .container {
+                        width: 100%;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 20px;
+                    }
+                
+                    .btn {
+                        display: inline-block;
+                        padding: 12px 30px;
+                        background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+                        color: var(--text-color);
+                        text-decoration: none;
+                        border-radius: 30px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        transition: all 0.3s ease;
+                        border: none;
+                        cursor: pointer;
+                        box-shadow: 0 5px 15px rgba(110, 0, 255, 0.4);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                
+                    .btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 20px rgba(110, 0, 255, 0.6);
+                    }
+                
+                    .btn:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                        transition: all 0.6s ease;
+                    }
+                
+                    .btn:hover:before {
+                        left: 100%;
+                    }
+                
+                    .section-title {
+                        font-size: 2.5rem;
+                        margin-bottom: 1.5rem;
+                        text-align: center;
+                        background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        position: relative;
+                        display: inline-block;
+                    }
+                
+                    .section-title:after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 80px;
+                        height: 4px;
+                        background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+                        border-radius: 2px;
+                    }
+                
+                    .section-subtitle {
+                        font-size: 1.2rem;
+                        color: var(--text-secondary);
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                
+                    .card {
+                        background: var(--card-bg);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        margin: 1rem 0;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                        transition: all 0.3s ease;
+                        border: 1px solid var(--glass-effect);
+                        backdrop-filter: blur(10px);
+                    }
+                
+                    .card:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 15px 40px rgba(110, 0, 255, 0.3);
+                    }
+                
+                    .section-padding {
+                        padding: 5rem 0;
+                    }
+                
+                    /* Navbar */
+                    .navbar {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(10, 11, 26, 0.8);
+                        backdrop-filter: blur(10px);
+                        z-index: 1000;
+                        transition: all 0.3s ease;
+                    }
+                
+                    .navbar.scrolled {
+                        background: var(--dark-bg);
+                        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                    }
+                
+                    .navbar-container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1rem 0;
+                    }
+                
+                    .navbar-logo {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                    }
+                
+                    .navbar-logo img {
+                        height: 40px;
+                        margin-right: 10px;
+                    }
+                
+                    .navbar-logo-text {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: var(--text-color);
+                        letter-spacing: 1px;
+                    }
+                
+                    .navbar-logo-text span {
+                        color: var(--secondary-color);
+                    }
+                
+                    .navbar-menu {
+                        display: flex;
+                        list-style-type: none;
+                    }
+                
+                    .navbar-item {
+                        margin: 0 1rem;
+                    }
+                
+                    .navbar-link {
+                        color: var(--text-color);
+                        text-decoration: none;
+                        font-weight: 500;
+                        padding: 0.5rem 0;
+                        position: relative;
+                        transition: all 0.3s ease;
+                    }
+                
+                    .navbar-link:hover {
+                        color: var(--secondary-color);
+                    }
+                
+                    .navbar-link:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: var(--secondary-color);
+                        transition: all 0.3s ease;
+                    }
+                
+                    .navbar-link:hover:after {
+                        width: 100%;
+                    }
+                
+                    .navbar-toggle {
+                        display: none;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        color: var(--text-color);
+                    }
+                
+                    /* Hero Section */
+                    .hero {
+                        height: 100vh;
+                        width: 100%;
+                        background: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                
+                    .hero:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: url('/api/placeholder/1920/1080') center center/cover no-repeat;
+                        opacity: 0.15;
+                        animation: zoomEffect 20s infinite alternate;
+                    }
+                
+                    @keyframes zoomEffect {
+                        0% {
+                            transform: scale(1);
+                        }
+                        100% {
+                            transform: scale(1.1);
+                        }
+                    }
+                
+                    .hero-content {
+                        position: relative;
+                        z-index: 1;
+                        text-align: center;
+                    }
+                
+                    .hero-title {
+                        font-size: 4rem;
+                        font-weight: 800;
+                        margin-bottom: 1.5rem;
+                        line-height: 1.2;
+                        background: linear-gradient(45deg, var(--secondary-color), var(--primary-color), var(--accent-color));
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        animation: titleAnim 3s ease-in-out infinite alternate;
+                    }
+                
+                    @keyframes titleAnim {
+                        0% {
+                            background-position: 0% 50%;
+                        }
+                        100% {
+                            background-position: 100% 50%;
+                        }
+                    }
+                
+                    .hero-subtitle {
+                        font-size: 1.5rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 2rem;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                
+                    .hero-btns {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+                
+                    .secondary-btn {
+                        background: transparent;
+                        border: 2px solid var(--secondary-color);
+                        color: var(--secondary-color);
+                        box-shadow: none;
+                    }
+                
+                    .secondary-btn:hover {
+                        background: var(--secondary-color);
+                        color: var(--darker-bg);
+                    }
+                
+                    /* Features Section */
+                    .features {
+                        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+                        position: relative;
+                    }
+                
+                    .features:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.1), transparent 60%);
+                    }
+                
+                    .features-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 2rem;
+                    }
+                
+                    .feature-card {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+                
+                    .feature-icon {
+                        font-size: 3rem;
+                        margin-bottom: 1.5rem;
+                        color: var(--secondary-color);
+                        background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+                
+                    .feature-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        color: var(--text-color);
+                    }
+                
+                    .feature-desc {
+                        color: var(--text-secondary);
+                    }
+                
+                    /* Countdown Section */
+                    .countdown {
+                        background: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+                        text-align: center;
+                        position: relative;
+                    }
+                
+                    .countdown:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 50%, rgba(255, 0, 170, 0.1), transparent 70%);
+                    }
+                
+                    .countdown-content {
+                        position: relative;
+                        z-index: 1;
+                    }
+                
+                    .countdown-title {
+                        font-size: 2.5rem;
+                        margin-bottom: 1rem;
+                        color: var(--text-color);
+                    }
+                
+                    .countdown-subtitle {
+                        font-size: 1.2rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 2rem;
+                    }
+                
+                    .countdown-timer {
+                        display: flex;
+                        justify-content: center;
+                        gap: 2rem;
+                        margin-bottom: 3rem;
+                    }
+                
+                    .countdown-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                
+                    .countdown-number {
+                        font-size: 3.5rem;
+                        font-weight: 700;
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: var(--card-bg);
+                        border-radius: 15px;
+                        margin-bottom: 0.5rem;
+                        border: 1px solid var(--glass-effect);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                
+                    .countdown-number:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%;
+                        background: linear-gradient(to bottom, var(--glass-effect), transparent);
+                    }
+                
+                    .countdown-label {
+                        font-size: 1rem;
+                        color: var(--text-secondary);
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+                
+                    .countdown-discount {
+                        font-size: 1.5rem;
+                        color: var(--accent-color);
+                        margin-bottom: 2rem;
+                        font-weight: 600;
+                    }
+                
+                    /* Pricing Section */
+                    .pricing {
+                        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+                    }
+                
+                    .pricing-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 2rem;
+                    }
+                
+                    .pricing-card {
+                        position: relative;
+                        overflow: hidden;
+                        text-align: center;
+                    }
+                
+                    .pricing-card.featured {
+                        transform: scale(1.05);
+                        z-index: 1;
+                        box-shadow: 0 20px 40px rgba(110, 0, 255, 0.4);
+                    }
+                
+                    .pricing-card.featured:before {
+                        background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) border-box;
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 2px solid transparent;
+                        border-radius: 15px;
+                        -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+                    }
+                
+                    .pricing-badge {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: var(--accent-color);
+                        color: var(--text-color);
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        font-weight: 600;
+                        border-radius: 0 15px 0 15px;
+                        z-index: 1;
+                    }
+                
+                    .pricing-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        color: var(--text-color);
+                    }
+                
+                    .pricing-price {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        margin-bottom: 1rem;
+                        color: var(--secondary-color);
+                    }
+                
+                    .pricing-period {
+                        font-size: 1rem;
+                        color: var(--text-secondary);
+                    }
+                
+                    .pricing-features {
+                        margin: 2rem 0;
+                        list-style-type: none;
+                    }
+                
+                    .pricing-feature {
+                        margin-bottom: 0.8rem;
+                        color: var(--text-secondary);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                
+                    .pricing-feature i {
+                        margin-right: 0.5rem;
+                        color: var(--secondary-color);
+                    }
+                
+                    /* Testimonials Section */
+                    .testimonials {
+                        background: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+                        position: relative;
+                    }
+                
+                    .testimonials:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 50%, rgba(0, 255, 170, 0.1), transparent 70%);
+                    }
+                
+                    .testimonials-content {
+                        position: relative;
+                        z-index: 1;
+                    }
+                
+                    .testimonials-slider {
+                        position: relative;
+                        width: 100%;
+                        overflow: hidden;
+                    }
+                
+                    .testimonials-track {
+                        display: flex;
+                        transition: transform 0.5s ease;
+                    }
+                
+                    .testimonial-card {
+                        flex: 0 0 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        padding: 2rem;
+                    }
+                
+                    .testimonial-img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-bottom: 1.5rem;
+                        border: 3px solid var(--secondary-color);
+                    }
+                
+                    .testimonial-text {
+                        font-size: 1.1rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 1.5rem;
+                        font-style: italic;
+                        line-height: 1.6;
+                    }
+                
+                    .testimonial-name {
+                        font-size: 1.2rem;
+                        color: var(--text-color);
+                        margin-bottom: 0.25rem;
+                    }
+                
+                    .testimonial-position {
+                        font-size: 0.9rem;
+                        color: var(--accent-color);
+                    }
+                
+                    .testimonials-nav {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                        margin-top: 2rem;
+                    }
+                
+                    .testimonials-nav-btn {
+                        border: none;
+                        background: var(--card-bg);
+                        color: var(--text-color);
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                    }
+                
+                    .testimonials-nav-btn:hover {
+                        background: var(--primary-color);
+                        transform: translateY(-3px);
+                    }
+                
+                    /* FAQ Section */
+                    .faq {
+                        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+                    }
+                
+                    .faq-container {
+                        max-width: 800px;
+                        margin: 0 auto;
+                    }
+                
+                    .faq-item {
+                        margin-bottom: 1rem;
+                        border-radius: 15px;
+                        overflow: hidden;
+                    }
+                
+                    .faq-question {
+                        background: var(--card-bg);
+                        padding: 1.5rem;
+                        font-size: 1.1rem;
+                        color: var(--text-color);
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        transition: all 0.3s ease;
+                        border: 1px solid var(--glass-effect);
+                    }
+                
+                    .faq-question:hover {
+                        background: rgba(30, 32, 58, 0.7);
+                    }
+                
+                    .faq-question i {
+                        transition: all 0.3s ease;
+                    }
+                
+                    .faq-question.active i {
+                        transform: rotate(180deg);
+                    }
+                
+                    .faq-answer {
+                        background: var(--card-bg);
+                        padding: 0 1.5rem;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                        border-left: 1px solid var(--glass-effect);
+                        border-right: 1px solid var(--glass-effect);
+                        border-bottom: 1px solid var(--glass-effect);
+                        border-radius: 0 0 15px 15px;
+                    }
+                
+                    .faq-answer.active {
+                        max-height: 300px;
+                        padding: 1.5rem;
+                    }
+                
+                    .faq-answer-text {
+                        color: var(--text-secondary);
+                        line-height: 1.6;
+                    }
+                
+                    /* Newsletter Section */
+                    .newsletter {
+                        background: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+                        text-align: center;
+                        position: relative;
+                    }
+                
+                    .newsletter:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.1), transparent 70%);
+                    }
+                
+                    .newsletter-content {
+                        position: relative;
+                        z-index: 1;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+                
+                    .newsletter-title {
+                        font-size: 2.5rem;
+                        margin-bottom: 1rem;
+                        color: var(--text-color);
+                    }
+                
+                    .newsletter-subtitle {
+                        font-size: 1.2rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 2rem;
+                    }
+                
+                    .newsletter-form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                
+                    .newsletter-input {
+                        padding: 1rem;
+                        border-radius: 30px;
+                        border: 1px solid var(--glass-effect);
+                        background: var(--card-bg);
+                        color: var(--text-color);
+                        font-size: 1rem;
+                    }
+                
+                    .newsletter-input::placeholder {
+                        color: var(--text-secondary);
+                    }
+                
+                    .newsletter-discount {
+                        font-size: 1.1rem;
+                        color: var(--accent-color);
+                        margin-top: 1rem;
+                    }
+                
+                    /* Footer Section */
+                    .footer {
+                        background: var(--darker-bg);
+                        padding: 4rem 0 2rem;
+                        position: relative;
+                    }
+                
+                    .footer:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 0%, rgba(110, 0, 255, 0.1), transparent 70%);
+                    }
+                
+                    .footer-content {
+                        position: relative;
+                        z-index: 1;
+                    }
+                
+                    .footer-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 2rem;
+                        margin-bottom: 3rem;
+                    }
+                
+                    .footer-column {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                
+                    .footer-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        color: var(--text-color);
+                    }
+                
+                    .footer-links {
+                        list-style-type: none;
+                    }
+                
+                    .footer-link {
+                        margin-bottom: 0.8rem;
+                    }
+                
+                    .footer-link a {
+                        color: var(--text-secondary);
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                
+                    .footer-link a:hover {
+                        color: var(--secondary-color);
+                        transform: translateX(5px);
+                    }
+                
+                    .footer-link i {
+                        margin-right: 0.5rem;
+                        font-size: 0.875rem;
+                    }
+                
+                    .footer-contact {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1rem;
+                        color: var(--text-secondary);
+                    }
+                
+                    .footer-contact i {
+                        margin-right: 1rem;
+                        font-size: 1.25rem;
+                        color: var(--secondary-color);
+                    }
+                
+                    .footer-bottom {
+                        text-align: center;
+                        padding-top: 2rem;
+                        border-top: 1px solid var(--glass-effect);
+                    }
+                
+                    .footer-copyright {
+                        color: var(--text-secondary);
+                        font-size: 0.9rem;
+                    }
+                
+                    .footer-social {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                        margin-top: 1rem;
+                    }
+                
+                    .footer-social-link {
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: var(--card-bg);
+                        color: var(--text-color);
+                        border-radius: 50%;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        border: 1px solid var(--glass-effect);
+                    }
+                
+                    .footer-social-link:hover {
+                        background: var(--primary-color);
+                        transform: translateY(-3px);
+                    }
+                
+                    /* Whatsapp Button */
+                    .whatsapp-btn {
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        width: 60px;
+                        height: 60px;
+                        background: #25D366;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                        z-index: 100;
+                        transition: all 0.3s ease;
+                    }
+                
+                    .whatsapp-btn:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    /* Comparison Section */
+                    .comparison {
+                        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+                    }
+                
+                    .comparison-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 2rem;
+                    }
+                
+                    .comparison-card {
+                        height: 100%;
+                    }
+                
+                    .comparison-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        color: var(--text-color);
+                        text-align: center;
+                    }
+                
+                    .comparison-list {
+                        list-style-type: none;
+                    }
+                
+                    .comparison-item {
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: flex-start;
+                    }
+                
+                    .comparison-item i {
+                        margin-right: 1rem;
+                        margin-top: 0.25rem;
+                        color: var(--secondary-color);
+                    }
+                
+                    .comparison-item.negative i {
+                        color: var(--accent-color);
+                    }
+                
+                    .comparison-item-text {
+                        color: var(--text-secondary);
+                        flex: 1;
+                    }
+                
+                    /* Timeline Section */
+                    .timeline {
+                        background: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+                        position: relative;
+                    }
+                
+                    .timeline:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle at 50% 50%, rgba(0, 255, 170, 0.1), transparent 70%);
+                    }
+                
+                    .timeline-content {
+                        position: relative;
+                        z-index: 1;
+                    }
+                
+                    .timeline-container {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        margin-bottom: 2rem;
+                    }
+                
+                    .timeline-track {
+                        display: flex;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        gap: 2rem;
+                        padding: 1rem 0;
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                
+                    .timeline-track::-webkit-scrollbar {
+                        display: none;
+                    }
+                
+                    .timeline-card {
+                        flex: 0 0 300px;
+                        scroll-snap-align: center;
+                        position: relative;
+                    }
+                
+                    .timeline-year {
+                        font-size: 1.5rem;
+                        color: var(--secondary-color);
+                        margin-bottom: 1rem;
+                        font-weight: 600;
+                    }
+                
+                    .timeline-title {
+                        font-size: 1.2rem;
+                        color: var(--text-color);
+                        margin-bottom: 0.5rem;
+                    }
+                
+                    .timeline-desc {
+                        color: var(--text-secondary);
+                        font-size: 0.9rem;
+                    }
+                
+                    .timeline-nav {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                        margin-top: 1rem;
+                    }
+                
+                    .timeline-nav-btn {
+                        border: none;
+                        background: var(--card-bg);
+                        color: var(--text-color);
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                    }
+                
+                    .timeline-nav-btn:hover {
+                        background: var(--primary-color);
+                        transform: translateY(-3px);
+                    }
+                
+                    /* Trust Indicators */
+                    .trust {
+                        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+                    }
+                
+                    .trust-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 2rem;
+                        text-align: center;
+                    }
+                
+                    .trust-card {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                
+                    .trust-number {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        color: var(--secondary-color);
+                        margin-bottom: 0.5rem;
+                    }
+                
+                    .trust-label {
+                        font-size: 1rem;
+                        color: var(--text-secondary);
+                        text-transform: uppercase;
+                    }
+                
+                    /* Responsive Styles */
+                    @media (max-width: 960px) {
+                        .navbar-menu {
+                            display: none;
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            background: var(--card-bg);
+                            flex-direction: column;
+                            padding: 2rem 0;
+                            text-align: center;
+                            border-radius: 0 0 15px 15px;
+                            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                        }
+                    
+                        .navbar-menu.active {
+                            display: flex;
+                        }
+                    
+                        .navbar-item {
+                            margin: 1rem 0;
+                        }
+                    
+                        .navbar-toggle {
+                            display: block;
+                        }
+                    
+                        .hero-title {
+                            font-size: 3rem;
+                        }
+                    
+                        .hero-subtitle {
+                            font-size: 1.2rem;
+                        }
+                    
+                        .section-title {
+                            font-size: 2rem;
+                        }
+                    
+                        .section-subtitle {
+                            font-size: 1rem;
+                        }
+                    
+                        .pricing-card.featured {
+                            transform: scale(1.02);
+                        }
+                    }
+                
+                    @media (max-width: 768px) {
+                        .hero-title {
+                            font-size: 2.5rem;
+                        }
+                    
+                        .hero-subtitle {
+                            font-size: 1rem;
+                        }
+                    
+                        .hero-btns {
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 0.5rem;
+                        }
+                    
+                        .countdown-timer {
+                            gap: 1rem;
+                        }
+                    
+                        .countdown-number {
+                            font-size: 2.5rem;
+                            width: 80px;
+                            height: 80px;
+                        }
+                    
+                        .pricing-card.featured {
+                            transform: scale(1);
+                        }
+                    }
+                
+                    @media (max-width: 576px) {
+                        .hero-title {
+                            font-size: 2rem;
+                        }
+                    }
+                </style>
+            </head>
+            <body class="page-body">
+            
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            
+                <!-- Navbar -->
+                <nav class="navbar">
+                    <div class="container navbar-container">
+                        <a href="#" class="navbar-logo">
+                            <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=CryptoNFTLogo" alt="CryptoNFT Solutions Logo">
+                            <span class="navbar-logo-text">CryptoNFT <span>Solutions</span></span>
+                        </a>
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="#hero" class="navbar-link">Home</a></li>
+                            <li class="navbar-item"><a href="#features" class="navbar-link">Features</a></li>
+                            <li class="navbar-item"><a href="#pricing" class="navbar-link">Pricing</a></li>
+                            <li class="navbar-item"><a href="#testimonials" class="navbar-link">Testimonials</a></li>
+                            <li class="navbar-item"><a href="#faq" class="navbar-link">FAQ</a></li>
+                            <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+                        </ul>
+                        <button class="navbar-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </nav>
+            
+                <!-- Hero Section -->
+                <section id="hero" class="hero section-padding">
+                    <div class="container hero-content">
+                        <h1 class="hero-title">Unlock the Future of Digital Assets with CryptoNFT Solutions</h1>
+                        <h2 class="hero-subtitle">Securely manage your NFTs and cryptocurrencies with our cutting-edge platform. Experience the next evolution in digital finance.</h2>
+                        <div class="hero-btns">
+                            <a href="#pricing" class="btn">Explore Pricing</a>
+                            <a href="#features" class="btn secondary-btn">Learn More</a>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Features Section -->
+                <section id="features" class="features section-padding">
+                    <div class="container">
+                        <h2 class="section-title">Key Features</h2>
+                        <p class="section-subtitle">Discover the powerful features that make CryptoNFT Solutions the leading platform for managing your digital assets.</p>
+                        <div class="features-grid">
+                            <div class="feature-card card">
+                                <i class="fas fa-wallet feature-icon"></i>
+                                <h3 class="feature-title">Wallet Management</h3>
+                                <p class="feature-desc">Securely manage your crypto wallets with advanced blockchain technology, predictive algorithms, and quantum-resistant security.</p>
+                            </div>
+                            <div class="feature-card card">
+                                <i class="fas fa-store feature-icon"></i>
+                                <h3 class="feature-title">NFT Marketplace</h3>
+                                <p class="feature-desc">Buy and sell NFTs on our decentralized marketplace with instant verification and seamless tokenization of assets.</p>
+                            </div>
+                            <div class="feature-card card">
+                                <i class="fas fa-chart-line feature-icon"></i>
+                                <h3 class="feature-title">Automated Investing</h3>
+                                <p class="feature-desc">Let AI optimize your portfolio with real-time market analysis and personalized, high-performance investment strategies.</p>
+                            </div>
+                            <div class="feature-card card">
+                                <i class="fas fa-graduation-cap feature-icon"></i>
+                                <h3 class="feature-title">Blockchain Academy</h3>
+                                <p class="feature-desc">Immersive learning with AR and simulations to master crypto and become an expert digital asset investor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Countdown Section -->
+                <section id="countdown" class="countdown section-padding">
+                    <div class="container countdown-content">
+                        <h2 class="section-title countdown-title">Limited Time Offer!</h2>
+                        <p class="section-subtitle countdown-subtitle">Don't miss out on our exclusive launch discount. Offer ends in:</p>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <p class="countdown-discount">Get 25% off your first year subscription!</p>
+                        <a href="#pricing" class="btn">Claim Your Discount Now</a>
+                    </div>
+                </section>
+            
+                <!-- Pricing Section -->
+                <section id="pricing" class="pricing section-padding">
+                    <div class="container">
+                        <h2 class="section-title">Choose Your Plan</h2>
+                        <p class="section-subtitle">Select the perfect plan to start managing your digital assets effectively with CryptoNFT Solutions.</p>
+                        <div class="pricing-grid">
+                            <div class="pricing-card card">
+                                <h3 class="pricing-title">Basic</h3>
+                                <div class="pricing-price">$19 <span class="pricing-period">/ month</span></div>
+                                <ul class="pricing-features">
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Wallet Management</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Basic NFT Access</li>
+                                    <li class="pricing-feature"><i class="fas fa-times" style="color: var(--accent-color);"></i>Automated Investing</li>
+                                    <li class="pricing-feature"><i class="fas fa-times" style="color: var(--accent-color);"></i>Academy Access</li>
+                                </ul>
+                                <a href="#" class="btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card card featured">
+                                <span class="pricing-badge">Recommended</span>
+                                <h3 class="pricing-title">Standard</h3>
+                                <div class="pricing-price">$49 <span class="pricing-period">/ month</span></div>
+                                <ul class="pricing-features">
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Advanced Wallet Management</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Full NFT Marketplace Access</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Basic Automated Investing</li>
+                                    <li class="pricing-feature"><i class="fas fa-times" style="color: var(--accent-color);"></i>Academy Access</li>
+                                </ul>
+                                <a href="#" class="btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card card">
+                                <h3 class="pricing-title">Premium</h3>
+                                <div class="pricing-price">$99 <span class="pricing-period">/ month</span></div>
+                                <ul class="pricing-features">
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Quantum-Secure Wallet Management</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Exclusive NFT Drops</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Advanced Automated Investing</li>
+                                    <li class="pricing-feature"><i class="fas fa-check"></i>Full Academy Access</li>
+                                </ul>
+                                <a href="#" class="btn">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Comparison Section -->
+                <section id="comparison" class="comparison section-padding">
+                    <div class="container">
+                        <h2 class="section-title">CryptoNFT Solutions vs. Traditional Platforms</h2>
+                        <p class="section-subtitle">See how CryptoNFT Solutions stands out from the competition with its advanced features and benefits.</p>
+                        <div class="comparison-grid">
+                            <div class="comparison-card card">
+                                <h3 class="comparison-title">Advantages</h3>
+                                <ul class="comparison-list">
+                                    <li class="comparison-item"><i class="fas fa-check-circle"></i><p class="comparison-item-text">Enhanced Security with Quantum Cryptography</p></li>
+                                    <li class="comparison-item"><i class="fas fa-check-circle"></i><p class="comparison-item-text">AI-Powered Automated Investment Strategies</p></li>
+                                    <li class="comparison-item"><i class="fas fa-check-circle"></i><p class="comparison-item-text">Decentralized and Secure NFT Marketplace</p></li>
+                                    <li class="comparison-item"><i class="fas fa-check-circle"></i><p class="comparison-item-text">Comprehensive Blockchain Education Academy</p></li>
+                                    <li class="comparison-item"><i class="fas fa-check-circle"></i><p class="comparison-item-text">User-Friendly Interface for All Experience Levels</p></li>
+                                </ul>
+                            </div>
+                            <div class="comparison-card card">
+                                <h3 class="comparison-title">Traditional Platforms</h3>
+                                <ul class="comparison-list">
+                                    <li class="comparison-item negative"><i class="fas fa-times-circle"></i><p class="comparison-item-text">Standard Security Measures, Vulnerable to Advanced Threats</p></li>
+                                    <li class="comparison-item negative"><i class="fas fa-times-circle"></i><p class="comparison-item-text">Limited or No Automated Investment Options</p></li>
+                                    <li class="comparison-item negative"><i class="fas fa-times-circle"></i><p class="comparison-item-text">Centralized Marketplaces with Higher Fees and Risks</p></li>
+                                    <li class="comparison-item negative"><i class="fas fa-times-circle"></i><p class="comparison-item-text">Basic Educational Resources, Lacking Depth</p></li>
+                                    <li class="comparison-item negative"><i class="fas fa-times-circle"></i><p class="comparison-item-text">Can Be Complex and Intimidating for New Users</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Timeline Section -->
+                <section id="timeline" class="timeline section-padding">
+                    <div class="container timeline-content">
+                        <h2 class="section-title">Our Journey of Innovation</h2>
+                        <p class="section-subtitle">A brief history of CryptoNFT Solutions and our milestones in the digital asset space.</p>
+                        <div class="timeline-container">
+                            <div class="timeline-track">
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2018</h4>
+                                    <h3 class="timeline-title">Foundation of CryptoNFT Solutions</h3>
+                                    <p class="timeline-desc">Company established with a vision to revolutionize digital asset management.</p>
+                                </div>
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2019</h4>
+                                    <h3 class="timeline-title">Launched Wallet Management Beta</h3>
+                                    <p class="timeline-desc">First beta version of our secure wallet management system released to early users.</p>
+                                </div>
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2020</h4>
+                                    <h3 class="timeline-title">NFT Marketplace Launch</h3>
+                                    <p class="timeline-desc">Decentralized NFT marketplace goes live, empowering creators and collectors.</p>
+                                </div>
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2021</h4>
+                                    <h3 class="timeline-title">Automated Investing Introduced</h3>
+                                    <p class="timeline-desc">AI-driven automated investment tools launched, enhancing user portfolio performance.</p>
+                                </div>
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2022</h4>
+                                    <h3 class="timeline-title">Blockchain Academy Inaugurated</h3>
+                                    <p class="timeline-desc">Comprehensive Blockchain Academy opens, offering cutting-edge crypto education.</p>
+                                </div>
+                                <div class="timeline-card card">
+                                    <h4 class="timeline-year">2023</h4>
+                                    <h3 class="timeline-title">10,000+ Active Users</h3>
+                                    <p class="timeline-desc">CryptoNFT Solutions community grows to over 10,000 active users globally.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Trust Indicators Section -->
+                <section id="trust" class="trust section-padding">
+                    <div class="container">
+                        <h2 class="section-title">Trusted by Thousands</h2>
+                        <p class="section-subtitle">Our commitment to security and innovation is reflected in our growing community and impressive metrics.</p>
+                        <div class="trust-grid">
+                            <div class="trust-card card">
+                                <div class="trust-number">10K+</div>
+                                <div class="trust-label">Active Users</div>
+                            </div>
+                            <div class="trust-card card">
+                                <div class="trust-number">$50M+</div>
+                                <div class="trust-label">Assets Managed</div>
+                            </div>
+                            <div class="trust-card card">
+                                <div class="trust-number">1000+</div>
+                                <div class="trust-label">Projects Powered</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Testimonials Section -->
+                <section id="testimonials" class="testimonials section-padding">
+                    <div class="container testimonials-content">
+                        <h2 class="section-title">What Our Users Say</h2>
+                        <p class="section-subtitle">Read genuine testimonials from our satisfied users who have transformed their digital asset management with CryptoNFT Solutions.</p>
+                        <div class="testimonials-slider">
+                            <div class="testimonials-track">
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=MariaGonzalez" alt="Maria Gonzalez" class="testimonial-img">
+                                    <p class="testimonial-text">"Managing my NFT portfolio with CryptoNFT Solutions has been incredible. Their experts are highly professional and always available to help."</p>
+                                    <h4 class="testimonial-name">Maria Gonzalez</h4>
+                                    <p class="testimonial-position">NFT Collector</p>
+                                </div>
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=CarlosRodriguez" alt="Carlos Rodriguez" class="testimonial-img">
+                                    <p class="testimonial-text">"My cryptocurrency investment results exceeded my expectations. The team is professional and the environment welcoming. Highly recommend!"</p>
+                                    <h4 class="testimonial-name">Carlos Rodriguez</h4>
+                                    <p class="testimonial-position">Crypto Investor</p>
+                                </div>
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=AnaMartinez" alt="Ana Martinez" class="testimonial-img">
+                                    <p class="testimonial-text">"Thanks to CryptoNFT Solutions, I can buy/sell NFTs easily and securely. Their products and services are excellent. Top-notch platform!"</p>
+                                    <h4 class="testimonial-name">Ana Martinez</h4>
+                                    <p class="testimonial-position">NFT Enthusiast</p>
+                                </div>
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=JessicaDavis" alt="Jessica Davis" class="testimonial-img">
+                                    <p class="testimonial-text">"The automated investing feature is a game-changer. I've seen significant growth in my portfolio without constant monitoring. Truly innovative!"</p>
+                                    <h4 class="testimonial-name">Jessica Davis</h4>
+                                    <p class="testimonial-position">Automated Investor</p>
+                                </div>
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=MichaelBrown" alt="Michael Brown" class="testimonial-img">
+                                    <p class="testimonial-text">"The Blockchain Academy is fantastic! I went from knowing nothing about crypto to confidently managing my digital assets. Educational and empowering."</p>
+                                    <h4 class="testimonial-name">Michael Brown</h4>
+                                    <p class="testimonial-position">Academy Graduate</p>
+                                </div>
+                                <div class="testimonial-card card">
+                                    <img src="https://api.dicebear.com/7.x/personas/svg?seed=EmilyJohnson" alt="Emily Johnson" class="testimonial-img">
+                                    <p class="testimonial-text">"Customer support is outstanding. Every question I had was answered promptly and thoroughly. It's reassuring to have such great support."</p>
+                                    <h4 class="testimonial-name">Emily Johnson</h4>
+                                    <p class="testimonial-position">Customer Satisfaction</p>
+                                </div>
+                            </div>
+                            <div class="testimonials-nav">
+                                <button class="testimonials-nav-btn prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                                <button class="testimonials-nav-btn next-testimonial"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- FAQ Section -->
+                <section id="faq" class="faq section-padding">
+                    <div class="container faq-container">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        <p class="section-subtitle">Find answers to common questions about CryptoNFT Solutions and digital asset management.</p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What is CryptoNFT Solutions? <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer-text">CryptoNFT Solutions is a platform dedicated to transforming investments through comprehensive management of NFTs and cryptocurrencies. We offer secure wallet management, an NFT marketplace, automated investing tools, and blockchain education.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How secure is your platform? <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer-text">Security is our top priority. We utilize advanced blockchain technology, predictive algorithms, and quantum cryptography to ensure the highest level of security for your digital assets.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can beginners use CryptoNFT Solutions? <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer-text">Yes, absolutely! Our platform is designed to be user-friendly for both beginners and experienced investors. We also offer the Blockchain Academy to help you learn and grow your expertise.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What kind of NFTs can I trade on your marketplace? <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer-text">Our NFT marketplace supports a wide range of NFTs, including digital art, collectibles, virtual real estate, and more. We focus on verified and tokenized assets to ensure authenticity and security.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How does automated investing work? <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer-text">Our automated investing system uses AI to analyze market trends in real-time and optimize your portfolio. It creates personalized investment strategies tailored to your risk profile and financial goals, maximizing your returns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Newsletter Section -->
+                <section id="newsletter" class="newsletter section-padding">
+                    <div class="container newsletter-content">
+                        <h2 class="section-title newsletter-title">Stay Updated & Get Exclusive Offers</h2>
+                        <p class="newsletter-subtitle">Subscribe to our newsletter to receive the latest news, updates, and exclusive discounts on CryptoNFT Solutions.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn">Subscribe Now</button>
+                        </form>
+                        <p class="newsletter-discount">Get a 10% discount on your first purchase when you subscribe!</p>
+                    </div>
+                </section>
+            
+                <!-- Footer Section -->
+                <footer class="footer">
+                    <div class="container footer-content">
+                        <div class="footer-grid">
+                            <div class="footer-column">
+                                <h4 class="footer-title">About Us</h4>
+                                <p style="color: var(--text-secondary);">CryptoNFT Solutions is dedicated to transforming digital asset investments through comprehensive management of NFTs and cryptocurrencies. With over 5 years of innovation, we provide secure and efficient solutions for everyone.</p>
+                            </div>
+                            <div class="footer-column">
+                                <h4 class="footer-title">Quick Links</h4>
+                                <ul class="footer-links">
+                                    <li class="footer-link"><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                    <li class="footer-link"><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+                                    <li class="footer-link"><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                                    <li class="footer-link"><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                                    <li class="footer-link"><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-column">
+                                <h4 class="footer-title">Contact Us</h4>
+                                <ul class="footer-links">
+                                    <li class="footer-contact"><i class="fas fa-map-marker-alt"></i> Av. Digital 456, Crypto City</li>
+                                    <li class="footer-contact"><i class="fas fa-phone"></i> +123 456 7890</li>
+                                    <li class="footer-contact"><i class="fas fa-envelope"></i> info@cryptonftsolutions.com</li>
+                                </ul>
+                            </div>
+                            <div class="footer-column">
+                                <h4 class="footer-title">Follow Us</h4>
+                                <div class="footer-social">
+                                    <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p class="footer-copyright">© 2024 CryptoNFT Solutions. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+            
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Navbar scroll effect
+                        const navbar = document.querySelector('.navbar');
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 50) {
+                                navbar.classList.add('scrolled');
+                            } else {
+                                navbar.classList.remove('scrolled');
+                            }
+                        });
+                    
+                        // Mobile menu toggle
+                        const navbarToggle = document.querySelector('.navbar-toggle');
+                        const navbarMenu = document.querySelector('.navbar-menu');
+                        navbarToggle.addEventListener('click', () => {
+                            navbarMenu.classList.toggle('active');
+                        });
+                    
+                        // Smooth scroll for navigation links
+                        const navLinks = document.querySelectorAll('.navbar-link');
+                        navLinks.forEach(link => {
+                            link.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                const targetId = this.getAttribute('href').substring(1);
+                                const targetSection = document.getElementById(targetId);
+                                if (targetSection) {
+                                    window.scrollTo({
+                                        top: targetSection.offsetTop - navbar.offsetHeight, // Adjust for navbar height
+                                        behavior: 'smooth'
+                                    });
+                                    if (navbarMenu.classList.contains('active')) {
+                                        navbarMenu.classList.remove('active'); // Close mobile menu after link click
+                                    }
+                                }
+                            });
+                        });
+                    
+                        // FAQ Accordion
+                        const faqQuestions = document.querySelectorAll('.faq-question');
+                        faqQuestions.forEach(question => {
+                            question.addEventListener('click', () => {
+                                const answer = question.nextElementSibling;
+                                const icon = question.querySelector('i');
+                                if (answer.classList.contains('active')) {
+                                    answer.classList.remove('active');
+                                    question.classList.remove('active');
+                                } else {
+                                    document.querySelectorAll('.faq-answer.active').forEach(item => item.classList.remove('active'));
+                                    document.querySelectorAll('.faq-question.active').forEach(item => item.classList.remove('active'));
+                                    answer.classList.add('active');
+                                    question.classList.add('active');
+                                }
+                            });
+                        });
+                    
+                        // Testimonials Slider
+                        const track = document.querySelector('.testimonials-track');
+                        const cards = document.querySelectorAll('.testimonial-card');
+                        const prevBtn = document.querySelector('.prev-testimonial');
+                        const nextBtn = document.querySelector('.next-testimonial');
+                        let cardIndex = 0;
+                        const cardWidth = cards[0].offsetWidth;
+                    
+                        function updateSlider() {
+                            track.style.transform = `translateX(-${cardIndex * cardWidth}px)`;
+                        }
+                    
+                        nextBtn.addEventListener('click', () => {
+                            cardIndex = (cardIndex + 1) % cards.length;
+                            updateSlider();
+                        });
+                    
+                        prevBtn.addEventListener('click', () => {
+                            cardIndex = (cardIndex - 1 + cards.length) % cards.length;
+                            updateSlider();
+                        });
+                    
+                         // Countdown Timer
+                         function updateCountdown() {
+                            const now = new Date();
+                            const endDate = new Date();
+                            endDate.setDate(now.getDate() + 30); // Example: Offer ends in 30 days
+                            endDate.setHours(23, 59, 59, 999);
+                        
+                            const timeLeft = endDate.getTime() - now.getTime();
+                        
+                            if (timeLeft <= 0) {
+                                clearInterval(countdownInterval);
+                                document.querySelector('.countdown-timer').innerHTML = '<div style="text-align:center; font-size: 1.5rem;">Offer Expired!</div>';
+                                return;
+                            }
+                        
+                            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                        
+                            document.getElementById('days').textContent = String(days).padStart(2, '0');
+                            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                        }
+                    
+                        updateCountdown(); // Run immediately to set initial values
+                        const countdownInterval = setInterval(updateCountdown, 1000);
+                    });
+                </script>
+            
+            </body>
+            </html>
+    
