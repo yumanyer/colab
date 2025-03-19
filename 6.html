@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Auto Haus | Premium Automotive & Motorcycle Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset and Base Styles (Existing Styles - No Changes Needed) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+      
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+        }
+      
+        /* Color Palette (Existing Styles - No Changes Needed) */
+        :root {
+            --primary: #0E1D2C;
+            --secondary: #E45826;
+            --accent: #FFC107;
+            --light: #FFFFFF;
+            --dark: #343a40;
+            --grey: #6c757d;
+            --light-grey: #f8f9fa;
+        }
+      
+        :root {
+            --secondary-rgb: 228, 88, 38; /* RGB value for --secondary for focus shadow */
+        }
+      
+        /* Typography (Existing Styles - No Changes Needed) */
+        .page-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+      
+        .section-heading {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+      
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+      
+      
+        .sub-heading {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: var(--dark);
+        }
+      
+        .text-center {
+            text-align: center;
+        }
+      
+        /* Layout (Existing Styles - No Changes Needed) */
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+      
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1.5rem;
+        }
+      
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 1.5rem;
+        }
+      
+        .col-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 1.5rem;
+        }
+      
+        .col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding: 0 1.5rem;
+        }
+      
+        @media (max-width: 992px) {
+            .section-heading {
+                font-size: 2.4rem;
+                margin-bottom: 2.5rem;
+            }
+            .page-heading {
+                font-size: 3rem;
+            }
+        }
+      
+      
+        @media (max-width: 768px) {
+            .col-6, .col-4, .col-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 1.5rem;
+            }
+            .section-heading {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+             .page-heading {
+                font-size: 2.5rem;
+            }
+        }
+      
+        /* Navbar (Existing Styles - No Changes Needed) */
+        .navbar {
+            background-color: var(--primary);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+      
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+      
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+      
+        .navbar-logo {
+            color: var(--light);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+      
+        .navbar-logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+      
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+      
+        .navbar-item {
+            margin-left: 2.5rem;
+        }
+      
+        .navbar-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+      
+        .navbar-link:hover {
+            color: var(--accent);
+        }
+      
+        .navbar-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+      
+        .navbar-link:hover::after {
+            width: 100%;
+        }
+      
+      
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+      
+        .hamburger-line {
+            width: 28px;
+            height: 3px;
+            background-color: var(--light);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+      
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+          
+            .navbar-menu {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                padding: 2rem 0;
+                transition: left 0.3s ease;
+            }
+          
+            .navbar-menu.active {
+                left: 0;
+            }
+          
+            .navbar-item {
+                margin: 1.5rem 0;
+                text-align: center;
+            }
+        }
+      
+        /* Hero Section (Existing Styles - No Changes Needed) */
+        .hero {
+            height: 90vh;
+            min-height: 600px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 75px;
+        }
+      
+        .hero-content {
+            max-width: 800px;
+            color: var(--light);
+            padding: 3rem;
+            animation: fadeIn 1.5s ease;
+            text-align: center;
+            margin: 0 auto;
+        }
+      
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+      
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+      
+        /* CTA Button (Existing Styles - No Changes Needed) */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            margin: 0 0.5rem;
+        }
+      
+        .cta-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+      
+        .cta-btn.secondary {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--light);
+        }
+      
+        .cta-btn.secondary:hover {
+            background-color: var(--secondary);
+            color: var(--light);
+        }
+      
+        /* About Section (Existing Styles - No Changes Needed) */
+        .about {
+            padding: 8rem 0;
+            background-color: var(--light-grey);
+        }
+      
+        .about-content {
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+        }
+      
+        .about-text {
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+      
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            margin-left: 3rem;
+        }
+      
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+      
+        .about-image:hover img {
+            transform: scale(1.08);
+        }
+      
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+        }
+      
+        /* Services Section (Existing Styles - No Changes Needed) */
+        .services {
+            padding: 8rem 0;
+            background-color: var(--primary);
+            color: var(--light);
+        }
+      
+        .services .section-heading {
+            color: var(--light);
+        }
+      
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+      
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+      
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+      
+        .service-title {
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+      
+        .service-description {
+            color: var(--light-grey);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+      
+        /* Testimonials Section (Existing Styles - No Changes Needed) */
+        .testimonials {
+            padding: 8rem 0;
+            background-color: var(--light);
+        }
+      
+        .testimonial-slider-container {
+            position: relative;
+            margin-top: 4rem;
+        }
+      
+        .testimonial-slider {
+            overflow: hidden;
+        }
+      
+        .testimonial-wrapper {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+      
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 3rem;
+            background-color: var(--light-grey);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 0 1rem;
+        }
+      
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+      
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+      
+        .testimonial-author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 1.5rem;
+            overflow: hidden;
+            border: 2px solid var(--secondary);
+        }
+      
+        .testimonial-author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+      
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+      
+        .testimonial-author-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+      
+        .testimonial-author-title {
+            font-size: 1rem;
+            color: var(--grey);
+        }
+      
+        .testimonial-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+      
+        .testimonial-arrow {
+            background-color: var(--secondary);
+            color: var(--light);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+      
+        .testimonial-arrow:hover {
+            background-color: var(--primary);
+        }
+      
+        /* Footer (Existing Styles - No Changes Needed) */
+        .footer {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 6rem 0 3rem;
+        }
+      
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+      
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            display: block;
+        }
+      
+        .footer-logo img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+      
+      
+        .footer-description {
+            margin-bottom: 2.5rem;
+            color: var(--light-grey);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+      
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+      
+        .footer-links {
+            list-style: none;
+        }
+      
+        .footer-link {
+            margin-bottom: 1rem;
+        }
+      
+        .footer-link a {
+            color: var(--light-grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.05rem;
+        }
+      
+        .footer-link a:hover {
+            color: var(--secondary);
+        }
+      
+        .footer-social {
+            display: flex;
+            margin-top: 2rem;
+        }
+      
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            margin-right: 1.2rem;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+      
+        .social-icon:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+      
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2.5rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--light-grey);
+            font-size: 0.95rem;
+        }
+      
+        /* WhatsApp Button (Existing Styles - No Changes Needed) */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+      
+        .whatsapp-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+      
+        /* Animations (Existing Styles - No Changes Needed) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+      
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      
+        /* Responsive Styles (Existing Styles - No Changes Needed) */
+        @media (max-width: 992px) {
+            .page-heading {
+                font-size: 3rem;
+            }
+          
+            .section-heading {
+                font-size: 2.4rem;
+            }
+          
+            .hero-title {
+                font-size: 3rem;
+            }
+          
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+          
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+          
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+      
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+          
+            .countdown {
+                flex-wrap: wrap;
+            }
+          
+            .countdown-item {
+                margin-bottom: 1rem;
+            }
+          
+            .newsletter-form {
+                flex-direction: column;
+            }
+          
+            .newsletter-input {
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+          
+            .newsletter-btn {
+                border-radius: 8px;
+            }
+        }
+      
+        @media (max-width: 576px) {
+            .page-heading {
+                font-size: 2.2rem;
+            }
+          
+            .section-heading {
+                font-size: 2rem;
+            }
+          
+            .hero-title {
+                font-size: 2.4rem;
+            }
+          
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+          
+            .testimonial-card {
+                padding: 2rem;
+            }
+        }
+      
+        /* Newsletter Section Styles (NEW) */
+        .newsletter {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1A2238 100%); /* Gradient Background */
+            color: var(--light);
+            text-align: center;
+        }
+      
+        .newsletter .section-heading {
+            color: var(--light); /* White heading for newsletter section */
+        }
+      
+        .newsletter .section-heading::after {
+            background-color: var(--accent); /* Accent color underline for newsletter heading */
+        }
+      
+        .newsletter-description {
+            max-width: 700px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+            color: var(--light-grey);
+            line-height: 1.8;
+        }
+      
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden; /* Clip overflow for rounded corners */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Shadow for the form */
+            background-color: var(--light); /* White form background */
+        }
+      
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-size: 1.05rem;
+            color: var(--dark); /* Dark text in input */
+        }
+      
+        .newsletter-input:focus {
+            outline: none;
+        }
+      
+        .newsletter-btn {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+      
+        .newsletter-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+      
+        /* Comparison Section Styles (NEW) */
+        .comparison {
+            padding: 8rem 0;
+            background-color: var(--light-grey);
+        }
+      
+        .comparison-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center cards on larger screens */
+            margin-top: 4rem;
+        }
+      
+        .comparison-card {
+            flex: 0 1 45%; /* Allow cards to grow, but start at 45% width */
+            max-width: 500px; /* Maximum width for each card */
+            background-color: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin: 1rem;
+        }
+      
+        .comparison-card-heading {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+      
+        .comparison-card-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+      
+        .comparison-list {
+            list-style: none;
+            padding-left: 0; /* Remove default list padding */
+        }
+      
+        .comparison-list-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem; /* Indent list items */
+            position: relative; /* For custom bullet */
+            font-size: 1.05rem;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+      
+        .comparison-list-item::before {
+            content: '\2022'; /* Unicode bullet point */
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+      
+        @media (max-width: 768px) {
+            .comparison-row {
+                flex-direction: column; /* Stack cards on smaller screens */
+                align-items: center; /* Center cards horizontally */
+            }
+            .comparison-card {
+                flex: 0 1 90%; /* Take up most of the width on smaller screens */
+                margin: 1rem 0; /* Reduce horizontal margin, keep vertical */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Existing HTML - No Changes Needed) -->
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="#home" class="navbar-logo">
+            <img src="images/logo-dark.png" alt="Apex Auto Haus Logo">
+            <span>APEX AUTO HAUS</span>
+        </a>
+        <div class="hamburger" id="hamburger-icon">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+        <ul class="navbar-menu" id="navbar-menu">
+            <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+            <li class="navbar-item"><a href="#about" class="navbar-link">About Us</a></li>
+            <li class="navbar-item"><a href="#services" class="navbar-link">Services</a></li>
+            <li class="navbar-item"><a href="#comparison" class="navbar-link">Why Choose Us</a></li> <!-- Changed Gallery to Comparison in Nav -->
+            <li class="navbar-item"><a href="#testimonials" class="navbar-link">Testimonials</a></li>
+            <li class="navbar-item"><a href="#newsletter" class="navbar-link">Newsletter</a></li> <!-- Changed Contact to Newsletter in Nav -->
+        </ul>
+    </div>
+    </nav>
+  
+    <!-- Hero Section (Existing HTML - No Changes Needed) -->
+    <section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">Elevating Automotive Excellence.</h1>
+            <h2 class="hero-subtitle">Premium Service for Your Passion.</h2>
+            <p class="hero-description">
+                Apex Auto Haus is dedicated to providing unparalleled service for luxury and performance vehicles. Our expert technicians combine precision engineering with a deep automotive passion to exceed your expectations. Experience the difference of true automotive care.
+            </p>
+            <div class="hero-buttons">
+                <a href="#newsletter" class="cta-btn">Stay Informed</a> <!-- Changed Contact CTA to Newsletter -->
+                <a href="#services" class="cta-btn secondary">Explore Services</a>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- About Section (Existing HTML - No Changes Needed) -->
+    <section id="about" class="about fade-in">
+    <div class="container">
+        <h2 class="section-heading">Our Story</h2>
+        <div class="row about-content">
+            <div class="col-6">
+                <p class="about-text">
+                    Founded by a team of automotive engineers and passionate enthusiasts, Apex Auto Haus was established to redefine the standards of vehicle service. We believe that your high-performance automobile or motorcycle deserves more than just routine maintenance; it deserves meticulous care and expertise.
+                </p>
+                <p class="about-text">
+                    With decades of combined experience in luxury and performance vehicle maintenance and repair, our team brings a wealth of knowledge and dedication to every service. We are committed to preserving the integrity and enhancing the performance of your prized vehicles, ensuring they continue to deliver exceptional driving experiences.
+                    </p>
+            </div>
+            <div class="col-6">
+                <div class="about-image">
+                    <img src="images/about-workshop.jpg" alt="Apex Auto Haus Workshop">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- Services Section (Existing HTML - No Changes Needed) -->
+    <section id="services" class="services fade-in">
+        <div class="container">
+            <h2 class="section-heading">Our Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="service-title">Performance Tuning</h3>
+                <p class="service-description">Optimize your vehicle's performance with our bespoke tuning services, tailored to enhance power, handling, and driving dynamics.</p>
+                </div>
+                <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h3 class="service-title">Comprehensive Maintenance</h3>
+                <p class="service-description">Ensure the longevity and reliability of your vehicle with our detailed maintenance programs, designed for peak condition.</p>
+                </div>
+                <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-motorcycle"></i>
+                </div>
+                <h3 class="service-title">Motorcycle Service & Repair</h3>
+                <p class="service-description">Specialized service and repair for high-performance motorcycles, ensuring optimal safety and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Comparison Section (NEW - Replaces Gallery Section) -->
+    <section id="comparison" class="comparison fade-in">
+    <div class="container">
+        <h2 class="section-heading">Why Choose Apex Auto Haus?</h2>
+        <div class="comparison-row">
+            <div class="comparison-card">
+                <h3 class="comparison-card-heading">Apex Auto Haus Advantages</h3>
+                <ul class="comparison-list">
+                    <li class="comparison-list-item"><b>Expert Technicians:</b> Certified specialists with extensive experience in luxury and performance vehicles.</li>
+                    <li class="comparison-list-item"><b>State-of-the-Art Technology:</b> Advanced diagnostic and repair equipment for precision service.</li>
+                    <li class="comparison-list-item"><b>Personalized Service:</b> Tailored solutions to meet the unique needs of your vehicle and driving style.</li>
+                    <li class="comparison-list-item"><b>Premium Quality Parts:</b> Use of only manufacturer-approved or high-performance aftermarket parts.</li>
+                    <li class="comparison-list-item"><b>Comprehensive Services:</b> From routine maintenance to complex repairs, performance tuning, and custom paint.</li>
+                    <li class="comparison-list-item"><b>Passion for Excellence:</b> Driven by a genuine passion for automotive perfection and customer satisfaction.</li>
+                </ul>
+            </div>
+            <div class="comparison-card">
+                <h3 class="comparison-card-heading">Limitations of Traditional Services</h3>
+                <ul class="comparison-list">
+                    <li class="comparison-list-item"><b>Generic Approach:</b> Often lack specialized knowledge for luxury and high-performance vehicles.</li>
+                    <li class="comparison-list-item"><b>Outdated Equipment:</b> May not have the latest diagnostic tools for modern vehicle systems.</li>
+                    <li class="comparison-list-item"><b>Standard Parts:</b> Typically use standard aftermarket parts, potentially compromising performance and longevity.</li>
+                    <li class="comparison-list-item"><b>Limited Service Range:</b> May not offer specialized services like performance tuning or custom paint work.</li>
+                    <li class="comparison-list-item"><b>Inconsistent Quality:</b> Service quality can vary widely, lacking the consistent excellence of specialized shops.</li>
+                    <li class="comparison-list-item"><b>Less Personal Attention:</b> Focus may be on volume rather than individualized customer care.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- Testimonials Section (Existing HTML - No Changes Needed) -->
+    <section id="testimonials" class="testimonials fade-in">
+    <div class="container">
+        <h2 class="section-heading">Client Stories</h2>
+        <div class="testimonial-slider-container">
+            <div class="testimonial-slider">
+                <div class="testimonial-wrapper" id="testimonial-wrapper">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Apex Auto Haus transformed my Porsche 911. Their attention to detail and technical expertise is unmatched in the industry. My car has never run better!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image"><img src="images/testimonial-1.jpg" alt="Michael Reynolds"></div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Michael Reynolds</p>
+                                <p class="testimonial-author-title">Porsche 911 Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I've been bringing my vehicles to Apex for years. Their professional service and deep knowledge of high-performance cars gives me complete confidence. They are simply the best."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image"><img src="images/testimonial-2.jpg" alt="Sophia Chen"></div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Sophia Chen</p>
+                                <p class="testimonial-author-title">Ferrari Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The custom work they did on my Ducati was exceptional. Apex Auto Haus truly understood my vision and delivered beyond my expectations. Highly recommend for any motorcycle enthusiast!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image"><img src="images/testimonial-3.jpg" alt="James Wilson"></div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">James Wilson</p>
+                                <p class="testimonial-author-title">Motorcycle Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <div class="testimonial-arrow" id="prev-testimonial"><i class="fas fa-chevron-left"></i></div>
+                <div class="testimonial-arrow" id="next-testimonial"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- Newsletter Section (NEW - Replaces Contact Section) -->
+    <section id="newsletter" class="newsletter fade-in">
+    <div class="container">
+        <h2 class="section-heading">Stay Updated with Apex Auto Haus</h2>
+        <p class="newsletter-description">
+            Subscribe to our newsletter to receive the latest news, exclusive offers, and expert tips on maintaining your luxury vehicle. Join our community of automotive enthusiasts and stay ahead of the curve.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="newsletter-btn">Subscribe Now</button>
+        </form>
+    </div>
+    </section>
+  
+    <!-- Footer (Existing HTML - No Changes Needed) -->
+    <footer class="footer fade-in">
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-4">
+                <a href="#home" class="footer-logo">
+                    <img src="images/logo-light.png" alt="Apex Auto Haus Logo">
+                </a>
+                <p class="footer-description">Your trusted partner for premium automotive and motorcycle service. Delivering excellence and passion in every detail.</p>
+            </div>
+            <div class="col-4">
+                <h3 class="footer-heading">Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#home">Home</a></li>
+                    <li class="footer-link"><a href="#about">About Us</a></li>
+                    <li class="footer-link"><a href="#services">Services</a></li>
+                    <li class="footer-link"><a href="#comparison">Why Choose Us</a></li>
+                    <li class="footer-link"><a href="#testimonials">Testimonials</a></li>
+                    <li class="footer-link"><a href="#newsletter">Newsletter</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3 class="footer-heading">Connect With Us</h3>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="footer-description">Stay updated with our latest services and offers by subscribing to our newsletter.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your Email">
+                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Apex Auto Haus. All Rights Reserved.</p>
+        </div>
+    </div>
+    </footer>
+  
+    <!-- WhatsApp Button (Existing HTML - No Changes Needed) -->
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+  
+    <!-- JavaScript Files (Existing JavaScript - No Changes Needed) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Navbar Scroll Effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+
+        // Hamburger Menu Toggle
+        $('#hamburger-icon').click(function() {
+            $('#navbar-menu').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+
+        // Smooth Scrolling for Nav Links
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top - $('.navbar').outerHeight()
+                }, 1000);
+                if ($('#navbar-menu').hasClass('active')) {
+                    $('#navbar-menu').removeClass('active');
+                    $('#hamburger-icon').removeClass('active');
+                }
+            }
+        });
+
+        // Fade In Sections on Scroll
+        $(window).on('scroll', function() {
+            $('.fade-in').each(function() {
+                if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.85) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+
+        // Testimonial Slider
+        let testimonialIndex = 0;
+        const testimonials = $('.testimonial-card');
+        const wrapper = $('#testimonial-wrapper');
+        const totalTestimonials = testimonials.length;
+
+        function showTestimonial(index) {
+            wrapper.css('transform', `translateX(-${index * 100}%)`);
+        }
+
+        $('#next-testimonial').click(function() {
+            testimonialIndex = (testimonialIndex + 1) % totalTestimonials;
+            showTestimonial(testimonialIndex);
+        });
+
+        $('#prev-testimonial').click(function() {
+            testimonialIndex = (testimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+            showTestimonial(testimonialIndex);
+        });
+
+        // Newsletter Form Submission (Example - Basic Alert, replace with AJAX for real submission)
+        $('#newsletterForm').submit(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            alert('Subscribed to newsletter successfully! (This is a demo alert. Replace with actual form submission logic.)');
+            // In a real application, you would use AJAX to send the email to a server-side script for processing.
+            // Example using fetch API (similar to contact form example, adapt for newsletter signup):
+            /*
+            fetch('/api/newsletter-signup', { // Replace with your newsletter signup API endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: $('.newsletter-input').val()
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Subscribed to newsletter successfully!');
+                    $('#newsletterForm')[0].reset(); // Clear the form
+                } else {
+                    alert('Error subscribing. Please try again.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error subscribing. Please try again.');
+            });
+            */
+        });
+
+
+         // Trigger fade-in animation on initial load
+        $('.fade-in').each(function() {
+            if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.85) {
+                $(this).addClass('active');
+            }
+        });
+
+    });
+    </script>
+</body>
+</html>
