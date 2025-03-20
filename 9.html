@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ctrl+Alt+Eat | Where History is Forged Between Bytes and Bites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+        }
+      
+        .page-body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      background-color: #0a0a15;
+        }
+      
+        .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+        }
+      
+        .section {
+      padding: 80px 0;
+        }
+      
+        .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #f8f8f8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+        }
+      
+        .section-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #00d9ff;
+      font-weight: 500;
+        }
+      
+        .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+        }
+      
+        .btn-primary {
+      background: linear-gradient(45deg, #ff00ff, #00d9ff);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+      
+        .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 217, 255, 0.5);
+        }
+      
+        .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: #00d9ff;
+      border: 1px solid #00d9ff;
+        }
+      
+        .btn-secondary:hover {
+      background: rgba(0, 217, 255, 0.1);
+      transform: translateY(-3px);
+        }
+      
+        .text-gradient {
+      background: linear-gradient(45deg, #ff00ff, #00d9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+        }
+      
+        /* Navbar Styles */
+        .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      background-color: rgba(10, 10, 21, 0.8);
+      backdrop-filter: blur(10px);
+        }
+      
+        .navbar.scrolled {
+      background-color: rgba(10, 10, 21, 0.95);
+      padding: 10px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+      
+        .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+        }
+      
+        .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f8f8f8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+        }
+      
+        .logo span {
+      color: #00d9ff;
+        }
+      
+        .nav-menu {
+      display: flex;
+      list-style: none;
+        }
+      
+        .nav-item {
+      margin-left: 25px;
+        }
+      
+        .nav-link {
+      color: #f8f8f8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+        }
+      
+        .nav-link:hover, .nav-link.active {
+      color: #00d9ff;
+        }
+      
+        .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #00d9ff;
+      transition: width 0.3s ease;
+        }
+      
+        .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+        }
+      
+        .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+        }
+      
+        .hamburger-line {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px 0;
+      background-color: #f8f8f8;
+      transition: all 0.3s ease;
+        }
+      
+        /* Hero Section */
+        .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+        }
+      
+        .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800') no-repeat center center/cover;
+      animation: zoomBg 20s infinite alternate;
+      z-index: -1;
+        }
+      
+        @keyframes zoomBg {
+      from {
+          transform: scale(1);
+      }
+      to {
+          transform: scale(1.1);
+      }
+        }
+      
+        .hero-content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+        }
+      
+        @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+        }
+      
+        .hero-title {
+      font-size: 3.5rem;
+      color: #f8f8f8;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+      
+        .hero-subtitle {
+      font-size: 1.5rem;
+      color: #00d9ff;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+        }
+      
+        .hero-description {
+      color: #f8f8f8;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+        }
+      
+        .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+        }
+      
+        /* Features Section */
+        .features {
+      background-color: #0a0a15;
+      position: relative;
+        }
+      
+        .features::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/1200/800') no-repeat center center/cover;
+      opacity: 0.05;
+      z-index: 0;
+        }
+      
+        .features-content {
+      position: relative;
+      z-index: 1;
+        }
+      
+        .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+        }
+      
+        .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 217, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+        }
+      
+        .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+      border-color: rgba(0, 217, 255, 0.3);
+        }
+      
+        .feature-icon {
+      font-size: 3rem;
+      color: #00d9ff;
+      margin-bottom: 20px;
+        }
+      
+        .feature-title {
+      font-size: 1.5rem;
+      color: #f8f8f8;
+      margin-bottom: 15px;
+        }
+      
+        .feature-description {
+      color: #cccccc;
+      line-height: 1.6;
+        }
+      
+        /* Countdown Section */
+        .countdown {
+      background: linear-gradient(45deg, #140035, #000f35);
+      padding: 50px 0;
+      text-align: center;
+        }
+      
+        .countdown-title {
+      font-size: 2rem;
+      color: #f8f8f8;
+      margin-bottom: 10px;
+        }
+      
+        .countdown-subtitle {
+      font-size: 1.2rem;
+      color: #00d9ff;
+      margin-bottom: 30px;
+        }
+      
+        .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+        }
+      
+        .countdown-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 100px;
+      border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+      
+        .countdown-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #f8f8f8;
+      margin-bottom: 5px;
+        }
+      
+        .countdown-label {
+      font-size: 0.9rem;
+      color: #00d9ff;
+      text-transform: uppercase;
+        }
+      
+        .countdown-message {
+      color: #f8f8f8;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+        }
+      
+        .countdown-highlight {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ff00ff;
+        }
+      
+        /* Sales Channels Section */
+        .sales-channels {
+      background-color: #0a0a15;
+        }
+      
+        .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+        }
+      
+        .channel-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+      
+        .channel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+      border-color: rgba(0, 217, 255, 0.3);
+        }
+      
+        .channel-icon {
+      font-size: 2.5rem;
+      color: #00d9ff;
+      margin-bottom: 15px;
+        }
+      
+        .channel-title {
+      font-size: 1.3rem;
+      color: #f8f8f8;
+      margin-bottom: 10px;
+        }
+      
+        .channel-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+        }
+      
+        /* Pricing Section */
+        .pricing {
+      background: linear-gradient(45deg, #140035, #000f35);
+        }
+      
+        .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+        }
+      
+        .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 217, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+        }
+      
+        .pricing-card.popular {
+      transform: scale(1.05);
+      border-color: #ff00ff;
+      box-shadow: 0 10px 30px rgba(255, 0, 255, 0.3);
+      z-index: 1;
+        }
+      
+        .pricing-card.popular::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 12px;
+      right: -30px;
+      background: #ff00ff;
+      color: white;
+      padding: 5px 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transform: rotate(45deg);
+        }
+      
+        .pricing-card:hover {
+      transform: translateY(-10px);
+        }
+      
+        .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-10px);
+        }
+      
+        .pricing-title {
+      font-size: 1.8rem;
+      color: #f8f8f8;
+      margin-bottom: 15px;
+        }
+      
+        .pricing-price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00d9ff;
+      margin-bottom: 20px;
+        }
+      
+        .pricing-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #cccccc;
+        }
+      
+        .pricing-features {
+      list-style: none;
+      margin-bottom: 30px;
+        }
+      
+        .pricing-feature {
+      color: #f8f8f8;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      
+        .pricing-feature:last-child {
+      border-bottom: none;
+        }
+      
+        .pricing-feature i {
+      color: #00d9ff;
+      margin-right: 10px;
+        }
+      
+        /* Comparison Section */
+        .comparison {
+      background-color: #0a0a15;
+        }
+      
+        .comparison-wrapper {
+      display: flex;
+      gap: 30px;
+        }
+      
+        .comparison-card {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+      
+        .advantages {
+      border-color: rgba(0, 217, 255, 0.3);
+        }
+      
+        .disadvantages {
+      border-color: rgba(255, 0, 255, 0.3);
+        }
+      
+        .comparison-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+        }
+      
+        .advantages .comparison-title {
+      color: #00d9ff;
+        }
+      
+        .disadvantages .comparison-title {
+      color: #ff00ff;
+        }
+      
+        .comparison-list {
+      list-style: none;
+        }
+      
+        .comparison-item {
+      color: #f8f8f8;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: flex-start;
+        }
+      
+        .comparison-item:last-child {
+      border-bottom: none;
+        }
+      
+        .comparison-item i {
+      margin-right: 10px;
+      margin-top: 5px;
+        }
+      
+        .advantages .comparison-item i {
+      color: #00d9ff;
+        }
+      
+        .disadvantages .comparison-item i {
+      color: #ff00ff;
+        }
+      
+        .comparison-text {
+      flex: 1;
+      line-height: 1.6;
+        }
+      
+      
+      
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #0a0a15;
+            overflow: hidden;
+        }
+      
+        .testimonial-carousel {
+            position: relative;
+            padding: 0 50px;
+        }
+      
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+      
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 0 15px;
+        }
+      
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            height: 100%;
+        }
+      
+        .testimonial-content {
+            color: #f8f8f8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+        }
+      
+        .testimonial-content::before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(0, 217, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: serif;
+        }
+      
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+      
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid #00d9ff;
+        }
+      
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+      
+        .author-info {
+            flex: 1;
+        }
+      
+        .author-name {
+            font-size: 1.2rem;
+            color: #00d9ff;
+            margin-bottom: 5px;
+        }
+      
+        .author-role {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+      
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 217, 255, 0.2);
+            color: #f8f8f8;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+      
+        .carousel-btn:hover {
+            background: rgba(0, 217, 255, 0.4);
+        }
+      
+        .carousel-btn.prev {
+            left: 0;
+        }
+      
+        .carousel-btn.next {
+            right: 0;
+        }
+      
+        /* FAQ Section */
+        .faq {
+            background: linear-gradient(45deg, #140035, #000f35);
+        }
+      
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+      
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+      
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+      
+        .accordion-header:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+      
+        .accordion-title {
+            font-size: 1.2rem;
+            color: #f8f8f8;
+            font-weight: 500;
+        }
+      
+        .accordion-icon {
+            color: #00d9ff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+      
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+      
+        .accordion-body {
+            padding: 0 20px 20px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+      
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+      
+        /* Newsletter Section */
+        .newsletter {
+            background-color: #0a0a15;
+            position: relative;
+        }
+      
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/800') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+      
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+      
+        .newsletter-title {
+            font-size: 2rem;
+            color: #f8f8f8;
+            margin-bottom: 15px;
+        }
+      
+        .newsletter-description {
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+      
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+      
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border-radius: 5px 0 0 5px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: #f8f8f8;
+            font-size: 1rem;
+        }
+      
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+      
+        .newsletter-btn {
+            background: linear-gradient(45deg, #ff00ff, #00d9ff);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 5px 5px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+      
+        .newsletter-btn:hover {
+            opacity: 0.9;
+        }
+      
+        .newsletter-incentive {
+            color: #00d9ff;
+            font-size: 0.9rem;
+        }
+      
+        /* Footer */
+        .footer {
+            background-color: #060611;
+            padding: 80px 0 30px;
+            color: #cccccc;
+        }
+      
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+      
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f8f8f8;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+      
+        .footer-logo span {
+            color: #00d9ff;
+        }
+      
+        .footer-about {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+      
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+      
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #f8f8f8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+      
+        .social-link:hover {
+            background: #00d9ff;
+            transform: translateY(-3px);
+        }
+      
+        .footer-title {
+            font-size: 1.3rem;
+            color: #f8f8f8;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+      
+        .footer-links {
+            list-style: none;
+        }
+      
+        .footer-link {
+            margin-bottom: 10px;
+        }
+      
+        .footer-link a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+      
+        .footer-link a:hover {
+            color: #00d9ff;
+            transform: translateX(5px);
+        }
+      
+        .footer-contact {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+      
+        .footer-contact i {
+            margin-right: 10px;
+            color: #00d9ff;
+            margin-top: 5px;
+        }
+      
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+      
+        .footer-copyright {
+      margin-bottom: 10px;
+        }
+      
+        .footer-policy {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+        }
+      
+        .footer-policy a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+        }
+      
+        .footer-policy a:hover {
+            color: #00d9ff;
+        }
+      
+        /* Whatsapp Button */
+        .whatsapp-btn {
+                  position: fixed;
+                  bottom: 20px;
+                  right: 20px;
+                  width: 60px;
+                  height: 60px;
+                  background: #25D366;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-size: 1.5rem;
+                  text-decoration: none;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                  z-index: 100;
+                  transition: all 0.3s ease;
+                    }
+                  
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+      .section {
+          padding: 60px 0;
+      }
+
+      .section-title {
+          font-size: 2rem;
+      }
+
+      .section-subtitle {
+          font-size: 1.1rem;
+          margin-bottom: 30px;
+      }
+
+      .hero {
+          height: auto;
+          padding: 100px 0 80px;
+          text-align: center;
+      }
+
+      .hero-title {
+          font-size: 3rem;
+      }
+
+      .hero-subtitle {
+          font-size: 1.3rem;
+      }
+
+      .hero-description {
+          font-size: 1rem;
+      }
+
+      .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .features-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .channels-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .pricing-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .pricing-card.popular {
+          transform: scale(1.02);
+      }
+
+      .comparison-wrapper {
+          flex-direction: column;
+      }
+
+      .calculator-form {
+          grid-template-columns: 1fr;
+      }
+
+      .testimonial-carousel {
+          padding: 0 20px;
+      }
+
+      .footer-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .footer-bottom {
+          padding-top: 20px;
+      }
+
+      .footer-policy {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+      }
+        }
+      
+        @media screen and (max-width: 768px) {
+      .navbar-content {
+          display: block;
+          position: relative;
+      }
+
+      .logo {
+          margin-bottom: 15px;
+      }
+
+      .nav-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: rgba(10, 10, 21, 0.95);
+          flex-direction: column;
+          text-align: center;
+          padding: 20px 0;
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Initially hidden */
+          transition: clip-path 0.3s ease;
+      }
+
+      .nav-menu.active {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Show menu */
+      }
+
+      .nav-item {
+          margin-left: 0;
+          margin-bottom: 20px;
+      }
+
+      .nav-item:last-child {
+          margin-bottom: 0;
+      }
+
+      .nav-link {
+          display: block;
+          padding: 10px 0;
+      }
+
+      .hamburger {
+          display: block;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(1) {
+          transform: rotate(-45deg) translate(-7px, 7px);
+      }
+
+      .hamburger.active .hamburger-line:nth-child(2) {
+          opacity: 0;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(3) {
+          transform: rotate(45deg) translate(-7px, -7px);
+      }
+
+      .hero-title {
+          font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+          font-size: 1.2rem;
+      }
+
+      .pricing-card.popular {
+          transform: scale(1.01);
+      }
+        }
+      
+        @media screen and (max-width: 576px) {
+      .section-title {
+          font-size: 1.8rem;
+      }
+
+      .hero-title {
+          font-size: 2rem;
+      }
+
+      .hero-subtitle {
+          font-size: 1.1rem;
+      }
+
+      .countdown-timer {
+          gap: 10px;
+      }
+
+      .countdown-item {
+          padding: 15px;
+          min-width: 80px;
+      }
+
+      .countdown-number {
+          font-size: 2rem;
+      }
+
+      .countdown-label {
+          font-size: 0.8rem;
+      }
+
+      .pricing-card {
+          padding: 30px 20px;
+      }
+
+      .pricing-title {
+          font-size: 1.5rem;
+      }
+
+      .pricing-price {
+          font-size: 2.5rem;
+      }
+
+      .pricing-price span {
+          font-size: 0.9rem;
+      }
+
+      .calculator-wrapper {
+          padding: 30px;
+      }
+
+      .testimonial-card {
+          padding: 20px;
+      }
+
+      .newsletter-form {
+          flex-direction: column;
+      }
+
+      .newsletter-input {
+          border-radius: 5px;
+          margin-bottom: 10px;
+      }
+
+      .newsletter-btn {
+          border-radius: 5px;
+      }
+        }
+    </style>
+</head>
+<body class="page-body">
+
+    <!-- WhatsApp Button -->
+     <!-- WhatsApp Button -->
+     <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+  <div class="container navbar-content">
+      <a href="#" class="logo">Ctrl+Alt+<span>Eat</span></a>
+      <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+      </button>
+  </div>
+    </nav>
+  
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+      <h1 class="hero-title">Unleash Your Inner Chef with <span class="text-gradient">Ctrl+Alt+Eat</span></h1>
+      <p class="hero-subtitle">The ultimate platform for culinary innovation and byte-sized recipes.</p>
+      <p class="hero-description">From coding recipes to crafting delicious dishes, Ctrl+Alt+Eat is your all-in-one solution to bridge the gap between technology and gastronomy. Explore a world where every meal is a masterpiece, and every byte is bursting with flavor.</p>
+      <div class="hero-buttons">
+          <a href="#pricing" class="btn btn-primary">Get Started Now</a>
+          <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+  </div>
+    </section>
+  
+    <!-- Features Section -->
+    <section id="features" class="section features">
+  <div class="features::before"></div>
+  <div class="container features-content">
+      <h2 class="section-title">Key Features</h2>
+      <p class="section-subtitle">Explore the functionalities that make Ctrl+Alt+Eat the perfect culinary companion.</p>
+      <div class="features-grid">
+          <div class="feature-card">
+              <i class="fas fa-code feature-icon"></i>
+              <h3 class="feature-title">Recipe Coding</h3>
+              <p class="feature-description">Write recipes in a structured, code-like format for precise and repeatable culinary results.</p>
+          </div>
+          <div class="feature-card">
+              <i class="fas fa-utensils feature-icon"></i>
+              <h3 class="feature-title">Interactive Guides</h3>
+              <p class="feature-description">Step-by-step interactive guides that adapt to your pace and skill level in the kitchen.</p>
+          </div>
+          <div class="feature-card">
+              <i class="fas fa-cloud feature-icon"></i>
+              <h3 class="feature-title">Cloud Sync</h3>
+              <p class="feature-description">Access your recipes and cooking progress from any device, anytime, anywhere.</p>
+          </div>
+          <div class="feature-card">
+              <i class="fas fa-share-alt feature-icon"></i>
+              <h3 class="feature-title">Community Sharing</h3>
+              <p class="feature-description">Share your culinary creations and discover recipes from a community of food enthusiasts and developers.</p>
+          </div>
+          <div class="feature-card">
+              <i class="fas fa-shopping-cart feature-icon"></i>
+              <h3 class="feature-title">Smart Shopping Lists</h3>
+              <p class="feature-description">Automatically generate shopping lists based on your selected recipes, making grocery shopping a breeze.</p>
+          </div>
+          <div class="feature-card">
+              <i class="fas fa-graduation-cap feature-icon"></i>
+              <h3 class="feature-title">Culinary Courses</h3>
+              <p class="feature-description">Expand your cooking knowledge with courses ranging from basic techniques to advanced gastronomy.</p>
+          </div>
+      </div>
+  </div>
+    </section>
+  
+    <!-- Countdown Section -->
+    <section class="countdown">
+  <div class="container">
+      <h2 class="countdown-title">Limited Time Launch Offer!</h2>
+      <p class="countdown-subtitle">Get early access and exclusive discounts. Offer ends in:</p>
+      <div class="countdown-timer">
+          <div class="countdown-item">
+              <div class="countdown-number">25</div>
+              <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+              <div class="countdown-number">10</div>
+              <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+              <div class="countdown-number">59</div>
+              <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+              <div class="countdown-number">32</div>
+              <div class="countdown-label">Seconds</div>
+          </div>
+      </div>
+      <p class="countdown-message">Don't miss out on becoming a founding member of <span class="countdown-highlight">Ctrl+Alt+Eat</span> and revolutionize your kitchen experience!</p>
+      <a href="#pricing" class="btn btn-primary">Claim Your Discount Now</a>
+  </div>
+    </section>
+  
+    <!-- Sales Channels Section -->
+    <section class="section sales-channels">
+  <div class="container">
+      <h2 class="section-title">Available On</h2>
+      <p class="section-subtitle">Access Ctrl+Alt+Eat through your favorite platforms.</p>
+      <div class="channels-grid">
+          <div class="channel-card">
+              <i class="fab fa-windows channel-icon"></i>
+              <h3 class="channel-title">Windows App</h3>
+              <p class="channel-description">Native application for Windows users with full feature access.</p>
+          </div>
+          <div class="channel-card">
+              <i class="fab fa-apple channel-icon"></i>
+              <h3 class="channel-title">macOS App</h3>
+              <p class="channel-description">Dedicated macOS application for a seamless culinary experience.</p>
+          </div>
+          <div class="channel-card">
+              <i class="fab fa-android channel-icon"></i>
+              <h3 class="channel-title">Android App</h3>
+              <p class="channel-description">On-the-go access with our feature-rich Android mobile application.</p>
+          </div>
+          <div class="channel-card">
+              <i class="fas fa-globe channel-icon"></i>
+              <h3 class="channel-title">Web Platform</h3>
+              <p class="channel-description">Access Ctrl+Alt+Eat directly from your browser on any device.</p>
+          </div>
+      </div>
+  </div>
+    </section>
+  
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+  <div class="container">
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="section-subtitle">Flexible pricing options to suit your culinary journey.</p>
+      <div class="pricing-grid">
+          <div class="pricing-card">
+              <h3 class="pricing-title">Basic</h3>
+              <div class="pricing-price">$9<span>/month</span></div>
+              <ul class="pricing-features">
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Access to Basic Recipes</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Recipe Coding Fundamentals</li>
+                  <li class="pricing-feature"><i class="fas fa-times"></i>Interactive Guides</li>
+                  <li class="pricing-feature"><i class="fas fa-times"></i>Community Access</li>
+                  <li class="pricing-feature"><i class="fas fa-times"></i>Cloud Sync</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="pricing-card popular">
+              <h3 class="pricing-title">Pro</h3>
+              <div class="pricing-price">$29<span>/month</span></div>
+              <ul class="pricing-features">
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Access to All Recipes</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Advanced Recipe Coding</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Interactive Guides</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Community Access</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Cloud Sync</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="pricing-card">
+              <h3 class="pricing-title">Enterprise</h3>
+              <div class="pricing-price">Contact Us</div>
+              <ul class="pricing-features">
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Custom Recipe Database</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Dedicated Support</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>Team Collaboration Tools</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>API Access</li>
+                  <li class="pricing-feature"><i class="fas fa-check"></i>On-Premise Option</li>
+              </ul>
+              <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+          </div>
+      </div>
+  </div>
+    </section>
+  
+    <!-- Comparison Section -->
+    <section class="section comparison">
+  <div class="container">
+      <h2 class="section-title">Why Choose Ctrl+Alt+Eat?</h2>
+      <p class="section-subtitle">Compare us with traditional recipe methods.</p>
+      <div class="comparison-wrapper">
+          <div class="comparison-card advantages">
+              <h3 class="comparison-title">Advantages</h3>
+              <ul class="comparison-list">
+                  <li class="comparison-item">
+                      <i class="fas fa-check-circle"></i>
+                      <p class="comparison-text">Precise and repeatable recipes through code-like structure.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-check-circle"></i>
+                      <p class="comparison-text">Interactive guides for a more engaging cooking experience.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-check-circle"></i>
+                      <p class="comparison-text">Cloud sync for accessibility across all your devices.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-check-circle"></i>
+                      <p class="comparison-text">Community sharing to discover and inspire new culinary ideas.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-check-circle"></i>
+                      <p class="comparison-text">Smart shopping lists to simplify grocery shopping.</p>
+                  </li>
+              </ul>
+          </div>
+          <div class="comparison-card disadvantages">
+              <h3 class="comparison-title">Traditional Methods</h3>
+              <ul class="comparison-list">
+                  <li class="comparison-item">
+                      <i class="fas fa-times-circle"></i>
+                      <p class="comparison-text">Recipes can be ambiguous and inconsistent.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-times-circle"></i>
+                      <p class="comparison-text">Static recipe formats lack interactivity.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-times-circle"></i>
+                      <p class="comparison-text">Recipes are often scattered across different platforms.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-times-circle"></i>
+                      <p class="comparison-text">Limited community features for sharing and discovery.</p>
+                  </li>
+                  <li class="comparison-item">
+                      <i class="fas fa-times-circle"></i>
+                      <p class="comparison-text">Manual shopping list creation is time-consuming.</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+    </section>
+  
+  
+  
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <p class="section-subtitle">Real stories from chefs and developers who are loving Ctrl+Alt+Eat.</p>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>“Ctrl+Alt+Eat has completely transformed the way I cook! The recipe coding feature is a game-changer for precision and consistency. Highly recommended for tech-savvy foodies!”</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://via.placeholder.com/150" alt="User 1">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Jane Doe</h4>
+                                    <p class="author-role">Software Engineer & Home Chef</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>“The interactive guides are incredibly helpful, especially when trying out complex recipes. I've learned so much and my dishes have never tasted better. Plus, the community is fantastic!”</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://via.placeholder.com/150" alt="User 2">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">John Smith</h4>
+                                    <p class="author-role">Professional Chef</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>“Cloud sync is a lifesaver! I can plan my meals and create shopping lists on my computer, and then access everything on my phone at the grocery store. So convenient and efficient!”</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://via.placeholder.com/150" alt="User 3">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Alice Johnson</h4>
+                                    <p class="author-role">Food Blogger</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+  
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+  <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Find answers to common queries about Ctrl+Alt+Eat.</p>
+      <div class="accordion">
+          <div class="accordion-item">
+              <div class="accordion-header">
+                  <h3 class="accordion-title">What is Recipe Coding?</h3>
+                  <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                  <div class="accordion-body">Recipe coding is a unique feature of Ctrl+Alt+Eat that allows you to write recipes in a structured, code-like format. This ensures precision, repeatability, and easy sharing of culinary instructions.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">
+                  <h3 class="accordion-title">Do I need coding experience to use Ctrl+Alt+Eat?</h3>
+                  <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                  <div class="accordion-body">No coding experience is necessary to use Ctrl+Alt+Eat. While we offer recipe coding for advanced users, the platform is designed to be user-friendly for everyone, with interactive guides and pre-coded recipes available.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">
+                  <h3 class="accordion-title">Is Ctrl+Alt+Eat available on mobile?</h3>
+                  <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                  <div class="accordion-body">Yes, Ctrl+Alt+Eat is available on Windows, macOS, Android, and as a web platform, ensuring you can access your recipes and cooking tools wherever you go.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">
+                  <h3 class="accordion-title">What kind of recipes can I find on Ctrl+Alt+Eat?</h3>
+                  <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                  <div class="accordion-body">Ctrl+Alt+Eat offers a wide variety of recipes, from basic everyday meals to gourmet dishes and specialized diets. Our community also contributes new recipes regularly, expanding our culinary library.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-header">
+                  <h3 class="accordion-title">How does the smart shopping list feature work?</h3>
+                  <i class="fas fa-chevron-down accordion-icon"></i>
+              </div>
+              <div class="accordion-content">
+                  <div class="accordion-body">The smart shopping list feature automatically analyzes the ingredients in your selected recipes and compiles a categorized shopping list, making grocery shopping more efficient and less prone to errors.</div>
+              </div>
+          </div>
+      </div>
+  </div>
+    </section>
+  
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+  <div class="newsletter::before"></div>
+  <div class="container newsletter-content">
+      <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+      <p class="newsletter-description">Stay updated with the latest recipes, features, and culinary tips from Ctrl+Alt+Eat.</p>
+      <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+      </form>
+      <p class="newsletter-incentive">Get exclusive early access to new features and special offers!</p>
+  </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+  <div class="container">
+      <div class="footer-grid">
+          <div class="footer-col">
+              <a href="#" class="footer-logo">Ctrl+Alt+<span>Eat</span></a>
+              <p class="footer-about">Ctrl+Alt+Eat is revolutionizing the culinary world by blending technology with gastronomy. Join us to explore a new dimension of cooking.</p>
+              <div class="footer-social">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+              </div>
+          </div>
+          <div class="footer-col">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-links">
+                  <li class="footer-link"><a href="#hero">Home</a></li>
+                  <li class="footer-link"><a href="#features">Features</a></li>
+                  <li class="footer-link"><a href="#pricing">Pricing</a></li>
+                  <li class="footer-link"><a href="#faq">FAQ</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4 class="footer-title">Support</h4>
+              <ul class="footer-links">
+                  <li class="footer-link"><a href="#">Help Center</a></li>
+                  <li class="footer-link"><a href="#">Terms of Service</a></li>
+                  <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                  <li class="footer-link"><a href="#">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4 class="footer-title">Contact Info</h4>
+              <div class="footer-contact">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <p>123 Tech Street, Culinary City, USA</p>
+              </div>
+              <div class="footer-contact">
+                  <i class="fas fa-envelope"></i>
+                  <p>info@ctrlalteat.com</p>
+              </div>
+              <div class="footer-contact">
+                  <i class="fas fa-phone"></i>
+                  <p>+1-555-123-4567</p>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p class="footer-copyright">© 2024 Ctrl+Alt+Eat. All Rights Reserved.</p>
+          <div class="footer-policy">
+              <a href="#">Terms of Use</a>
+              <a href="#">Privacy Policy</a>
+          </div>
+      </div>
+  </div>
+    </footer>
+  
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+      
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+      
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+      
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+      
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+      
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const content = item.querySelector('.accordion-content');
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+      
+        // Testimonial Carousel
+        const track = document.querySelector('.testimonial-track');
+        const slides = Array.from(track.children);
+        const prevButton = document.querySelector('.carousel-btn.prev');
+        const nextButton = document.querySelector('.carousel-btn.next');
+        const slideWidth = slides[0].offsetWidth;
+        let slideIndex = 0;
+      
+        const setSlidePosition = (slide, index) => {
+            slide.style.left = slideWidth * index + 'px';
+        }
+      
+        slides.forEach(setSlidePosition);
+      
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+            currentSlide.classList.remove('current-slide');
+            targetSlide.classList.add('current-slide');
+        }
+      
+        const updateDots = (currentIndex) => {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+      
+        // Next button click
+        nextButton.addEventListener('click', e => {
+            const currentSlide = track.querySelector('.current-slide');
+            let nextSlide = currentSlide.nextElementSibling;
+            if (!nextSlide) {
+                nextSlide = slides[0]; // Wrap around to the first slide
+            }
+            moveToSlide(track, currentSlide, nextSlide);
+        });
+      
+        // Prev button click
+        prevButton.addEventListener('click', e => {
+            const currentSlide = track.querySelector('.current-slide');
+            let prevSlide = currentSlide.previousElementSibling;
+            if (!prevSlide) {
+                prevSlide = slides[slides.length - 1]; // Wrap around to the last slide
+            }
+            moveToSlide(track, currentSlide, prevSlide);
+        });
+      
+        // ROI Calculator
+        const calculateBtn = document.getElementById('calculate-btn');
+        const resultsDiv = document.querySelector('.calculator-results');
+        const savingsValueSpan = document.getElementById('savings-value');
+      
+        calculateBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+        
+            const cookFrequency = parseInt(document.getElementById('cook-frequency').value) || 0;
+            const timePerRecipe = parseInt(document.getElementById('time-per-recipe').value) || 0;
+            const hourlyRate = parseFloat(document.getElementById('hourly-rate').value) || 0;
+            const wastePercentage = parseInt(document.getElementById('waste-percentage').value) || 0;
+        
+            const weeklyTimeSavedHours = (cookFrequency * timePerRecipe) / 60 * (wastePercentage / 100);
+            const annualSavings = weeklyTimeSavedHours * hourlyRate * 52;
+        
+            savingsValueSpan.textContent = annualSavings.toFixed(2);
+            resultsDiv.style.display = 'block';
+        });
+      
+    </script>
+</body>
+</html>
