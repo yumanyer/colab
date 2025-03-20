@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éclat Gastronomique - Where Elegance is Savored</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS Classes */
+        .custom-body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Typography */
+        .custom-heading-1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .custom-heading-2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .custom-heading-3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .custom-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-emphasize {
+            font-style: italic;
+            color: #9c7a2e;
+        }
+
+        /* Layout */
+        .custom-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .custom-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .custom-col {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .custom-col-2 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 15px;
+        }
+
+        .custom-col-3 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 15px;
+        }
+
+        .custom-col-4 {
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding: 0 15px;
+        }
+
+        /* Colors */
+        .custom-bg-primary {
+            background-color: #101820;
+        }
+
+        .custom-bg-secondary {
+            background-color: #9c7a2e;
+        }
+
+        .custom-bg-light {
+            background-color: #f8f5f0;
+        }
+
+        .custom-bg-dark {
+            background-color: #0a1016;
+        }
+
+        .custom-text-primary {
+            color: #101820;
+        }
+
+        .custom-text-secondary {
+            color: #9c7a2e;
+        }
+
+        .custom-text-light {
+            color: #f8f5f0;
+        }
+
+        .custom-text-dark {
+            color: #0a1016;
+        }
+        .whiting{
+            color: wheat !important;
+        }
+        /* Navbar - Semi-transparent that becomes opaque on scroll */
+        .custom-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background-color: rgba(16, 24, 32, 0.7);
+        }
+
+        .custom-navbar-scrolled {
+            background-color: rgba(16, 24, 32, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f8f5f0;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .custom-logo span {
+            color: #9c7a2e;
+        }
+
+        .custom-nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .custom-nav-link {
+            color: #f8f5f0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .custom-nav-link:hover {
+            color: #9c7a2e;
+        }
+
+        .custom-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #9c7a2e;
+            transition: width 0.3s ease;
+        }
+
+        .custom-nav-link:hover::after {
+            width: 100%;
+        }
+
+        .custom-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        .custom-hamburger-line {
+            width: 100%;
+            height: 3px;
+            background-color: #f8f5f0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section - Two Columns */
+        .custom-hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #101820;
+            padding-top: 80px;
+        }
+
+        .custom-hero-content {
+            display: flex;
+            height: 100%;
+        }
+
+        .custom-hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .custom-hero-title {
+            font-size: 4rem;
+            color: #f8f5f0;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .custom-hero-subtitle {
+            font-size: 1.8rem;
+            color: #9c7a2e;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .custom-hero-description {
+            font-size: 1.2rem;
+            color: #f8f5f0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 580px;
+        }
+
+        .custom-hero-image {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            animation: fadeInRight 1.5s ease-out;
+        }
+
+        .custom-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Button Styles */
+        .custom-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .custom-btn-primary {
+            background-color: #9c7a2e;
+            color: #f8f5f0;
+            border: 2px solid #9c7a2e;
+        }
+
+        .custom-btn-primary:hover {
+            background-color: transparent;
+            color: #9c7a2e;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-btn-secondary {
+            background-color: transparent;
+            color: #9c7a2e;
+            border: 2px solid #9c7a2e;
+        }
+
+        .custom-btn-secondary:hover {
+            background-color: #9c7a2e;
+            color: #f8f5f0;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-btn-light {
+            background-color: transparent;
+            color: #f8f5f0;
+            border: 2px solid #f8f5f0;
+        }
+
+        .custom-btn-light:hover {
+            background-color: #f8f5f0;
+            color: #101820;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Info Section - Animated Cards */
+        .custom-info-section {
+            padding: 100px 0;
+            background-color: #f8f5f0;
+        }
+
+        .custom-section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .custom-section-title h2 {
+            font-size: 2.8rem;
+            color: #101820;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .custom-section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #9c7a2e;
+        }
+
+        .custom-section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .custom-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background-color: #9c7a2e;
+            transition: height 0.5s ease;
+        }
+
+        .custom-card:hover::before {
+            height: 100%;
+        }
+
+        .custom-card-icon {
+            font-size: 2.5rem;
+            color: #9c7a2e;
+            margin-bottom: 20px;
+        }
+
+        .custom-card-title {
+            font-size: 1.6rem;
+            color: #101820;
+            margin-bottom: 15px;
+        }
+
+        .custom-card-text {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Limited Time Offer */
+        .custom-time-offer {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 16, 22, 0.8), rgba(10, 16, 22, 0.8)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            text-align: center;
+            color: #f8f5f0;
+        }
+
+        .custom-offer-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #f8f5f0;
+        }
+
+        .custom-offer-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #9c7a2e;
+            font-style: italic;
+        }
+
+        .custom-offer-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .custom-countdown {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .custom-countdown-item {
+            background-color: rgba(156, 122, 46, 0.1);
+            border: 2px solid #9c7a2e;
+            border-radius: 8px;
+            padding: 20px 15px;
+            margin: 0 10px 20px;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .custom-countdown-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f8f5f0;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .custom-countdown-text {
+            font-size: 1rem;
+            color: #9c7a2e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .custom-offer-highlight {
+            font-size: 2rem;
+            color: #9c7a2e;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* Sales Points */
+        .custom-sales-points {
+            padding: 100px 0;
+            background-color: #101820;
+        }
+
+        .custom-sales-point {
+            background-color: rgba(248, 245, 240, 0.05);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(156, 122, 46, 0.2);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .custom-sales-point:hover {
+            background-color: rgba(156, 122, 46, 0.1);
+            transform: scale(1.03);
+            border-color: #9c7a2e;
+        }
+
+        .custom-sales-icon {
+            font-size: 2rem;
+            color: #9c7a2e;
+            margin-bottom: 20px;
+        }
+
+        .custom-sales-title {
+            font-size: 1.5rem;
+            color: #f8f5f0;
+            margin-bottom: 15px;
+        }
+
+        .custom-sales-text {
+            font-size: 1rem;
+            color: #bbb;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Pricing Packages */
+        .custom-pricing {
+            padding: 100px 0;
+            background-color: #f8f5f0;
+        }
+
+        .custom-pricing-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-pricing-recommended {
+            transform: scale(1.05);
+            border-color: #9c7a2e;
+            z-index: 1;
+        }
+
+        .custom-pricing-recommended::before {
+            content: 'CHEF\'S RECOMMENDATION';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #9c7a2e;
+            color: #fff;
+            padding: 7px 15px;
+            font-size: 0.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .custom-pricing-title {
+            font-size: 1.8rem;
+            color: #101820;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .custom-pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #9c7a2e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .custom-pricing-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .custom-pricing-description {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .custom-pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            flex-grow: 1;
+        }
+
+        .custom-pricing-feature {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-pricing-feature i {
+            color: #9c7a2e;
+            margin-right: 10px;
+        }
+
+        .custom-pricing-btn {
+            align-self: center;
+        }
+
+        /* Comparison Section */
+        .custom-comparison {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .custom-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .custom-comparison-table th,
+        .custom-comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .custom-comparison-table th {
+            background-color: #101820;
+            color: #f8f5f0;
+            font-size: 1.2rem;
+        }
+
+        .custom-comparison-table td {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .custom-comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .custom-comparison-table td:first-child {
+            font-weight: 600;
+            color: #101820;
+        }
+
+        .custom-highlight-cell {
+            background-color: rgba(156, 122, 46, 0.1);
+            font-weight: 600;
+            color: #9c7a2e !important;
+        }
+
+        /* Testimonials */
+        .custom-testimonials {
+            padding: 100px 0;
+            background-color: #101820;
+            position: relative;
+        }
+
+        .custom-testimonial-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .custom-testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .custom-testimonial {
+            min-width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        .custom-testimonial-content {
+            background-color: rgba(248, 245, 240, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            position: relative;
+            margin-bottom: 40px;
+            border: 1px solid rgba(156, 122, 46, 0.2);
+        }
+
+        .custom-testimonial-content::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            border-width: 20px 20px 0;
+            border-style: solid;
+            border-color: rgba(248, 245, 240, 0.05) transparent;
+        }
+
+        .custom-testimonial-quote {
+            font-size: 1.8rem;
+            color: #9c7a2e;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .custom-testimonial-text {
+            font-size: 1.1rem;
+            color: #f8f5f0;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .custom-testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .custom-testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-testimonial-name {
+            font-size: 1.2rem;
+            color: #9c7a2e;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .custom-testimonial-title {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .custom-testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .custom-testimonial-arrow {
+            background-color: transparent;
+            color: #9c7a2e;
+            border: 2px solid #9c7a2e;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .custom-testimonial-arrow:hover {
+            background-color: #9c7a2e;
+            color: #f8f5f0;
+        }
+
+        /* FAQs */
+        .custom-faqs {
+            padding: 100px 0;
+            background-color: #f8f5f0;
+        }
+
+        .custom-faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .custom-faq-question {
+            background-color: #fff;
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .custom-faq-question h3 {
+            font-size: 1.3rem;
+            color: #101820;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .custom-faq-question i {
+            font-size: 1.2rem;
+            color: #9c7a2e;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-faq-answer {
+            background-color: #fff;
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .custom-faq-answer p {
+            padding: 20px 0;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .custom-faq-active .custom-faq-question {
+            background-color: #9c7a2e;
+        }
+
+        .custom-faq-active .custom-faq-question h3 {
+            color: #fff;
+        }
+
+        .custom-faq-active .custom-faq-question i {
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .custom-faq-active .custom-faq-answer {
+            max-height: 500px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Newsletter */
+        .custom-newsletter {
+            padding: 100px 0;
+            background-color: #101820;
+            text-align: center;
+        }
+
+        .custom-newsletter-title {
+            font-size: 2.5rem;
+            color: #f8f5f0;
+            margin-bottom: 15px;
+        }
+
+        .custom-newsletter-subtitle {
+            font-size: 1.2rem;
+            color: #9c7a2e;
+            margin-bottom: 40px;
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .custom-newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .custom-newsletter-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px 20px;
+            margin-right: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: rgba(248, 245, 240, 0.1);
+            color: #f8f5f0;
+            border: 1px solid rgba(156, 122, 46, 0.3);
+        }
+
+        .custom-newsletter-input:focus {
+            outline: none;
+            border-color: #9c7a2e;
+        }
+
+        .custom-newsletter-input::placeholder {
+            color: rgba(248, 245, 240, 0.5);
+        }
+
+        .custom-newsletter-btn {
+            padding: 15px 30px;
+            background-color: #9c7a2e;
+            color: #f8f5f0;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .custom-newsletter-btn:hover {
+            background-color: #b99248;
+            transform: translateY(-3px);
+        }
+
+        .custom-newsletter-incentive {
+            display: block;
+            font-size: 1.1rem;
+            color: #9c7a2e;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .custom-footer {
+            background-color: #0a1016;
+            padding-top: 80px;
+            color: #f8f5f0;
+        }
+
+        .custom-footer-main {
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(248, 245, 240, 0.1);
+        }
+
+        .custom-footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f8f5f0;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .custom-footer-logo span {
+            color: #9c7a2e;
+        }
+
+        .custom-footer-about {
+            font-size: 1rem;
+            color: #bbb;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .custom-footer-heading {
+            font-size: 1.3rem;
+            color: #f8f5f0;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .custom-footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #9c7a2e;
+        }
+
+        .custom-footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-footer-link {
+            margin-bottom: 15px;
+        }
+
+        .custom-footer-link a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-footer-link a:hover {
+            color: #9c7a2e;
+        }
+
+        .custom-footer-link i {
+            margin-right: 10px;
+            color: #9c7a2e;
+            font-size: 0.9rem;
+        }
+
+        .custom-footer-contact-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .custom-footer-contact-icon {
+            color: #9c7a2e;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .custom-footer-contact-text {
+            color: #bbb;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .custom-footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .custom-footer-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(156, 122, 46, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9c7a2e;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .custom-footer-social-link:hover {
+            background-color: #9c7a2e;
+            color: #f8f5f0;
+            transform: translateY(-3px);
+        }
+
+        .custom-footer-bottom {
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .custom-footer-copyright {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .custom-whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 2rem;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-whatsapp-btn:hover {
+            background-color: #128c7e;
+        }
+
+       
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .custom-heading-1 {
+                font-size: 3rem;
+            }
+
+            .custom-heading-2 {
+                font-size: 2rem;
+            }
+
+            .custom-hero {
+                height: auto;
+                padding: 100px 0;
+            }
+
+            .custom-hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .custom-hero-text {
+                padding: 0;
+            }
+
+            .custom-hero-image {
+                height: 500px;
+            }
+
+            .custom-col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .custom-heading-1 {
+                font-size: 2.5rem;
+            }
+
+            .custom-heading-2 {
+                font-size: 1.8rem;
+            }
+
+            .custom-col-sm-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .custom-navbar {
+                padding: 20px;
+            }
+
+            .custom-nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #101820;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .custom-nav-links.active {
+                display: flex;
+            }
+
+            .custom-nav-link {
+                padding: 15px 0;
+            }
+
+            .custom-hamburger {
+                display: flex;
+            }
+
+            .custom-hero-image {
+                height: 400px;
+            }
+
+            .custom-card {
+                padding: 20px;
+            }
+
+            .custom-pricing-card {
+                padding: 30px 20px;
+            }
+
+            .custom-testimonial-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .custom-heading-1 {
+                font-size: 2rem;
+            }
+
+            .custom-heading-2 {
+                font-size: 1.5rem;
+            }
+
+            .custom-col-xs-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .custom-hero-image {
+                height: 300px;
+            }
+
+            .custom-countdown-item {
+                min-width: 100px;
+                padding: 15px 10px;
+                margin: 0 5px 20px;
+            }
+
+            .custom-countdown-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="custom-body">
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="custom-whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="custom-navbar">
+        <a href="#" class="custom-logo">Éclat <span>Gastronomique</span></a>
+        <div class="custom-hamburger" id="hamburger-icon">
+            <div class="custom-hamburger-line"></div>
+            <div class="custom-hamburger-line"></div>
+            <div class="custom-hamburger-line"></div>
+        </div>
+        <div class="custom-nav-links" id="nav-links">
+            <a href="#about" class="custom-nav-link">About Us</a>
+            <a href="#exclusivity" class="custom-nav-link">Exclusivity</a>
+            <a href="#services" class="custom-nav-link">Services</a>
+            <a href="#experiences" class="custom-nav-link">Experiences</a>
+            <a href="#testimonials" class="custom-nav-link">Voices</a>
+            <a href="#faq" class="custom-nav-link">FAQ</a>
+            <a href="#book" class="custom-nav-link custom-btn custom-btn-secondary">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="custom-hero" id="hero">
+        <div class="custom-container custom-hero-content">
+            <div class="custom-col-2 custom-hero-text">
+                <h1 class="custom-hero-title">Éclat Gastronomique</h1>
+                <h2 class="custom-hero-subtitle">Where gastronomy becomes art, and every dinner is a masterpiece.</h2>
+                <p class="custom-hero-description">In the heart of the city, Éclat Gastronomique is more than just a restaurant—it's a destination. Born from the vision of two passionate chefs, our space was conceived as a sanctuary for the most discerning palates. Inspired by French culinary tradition and innovative molecular techniques, we create menus that are a symphony of flavors, textures, and aromas.</p>
+                <a href="#book" class="custom-btn custom-btn-primary">Reserve Your Experience</a>
+            </div>
+            <div class="custom-col-2 custom-hero-image">
+                <img src="https://res.cloudinary.com/doackpmhu/image/upload/v1741200210/Gemini_Generated_Image_h20dyxh20dyxh20d_lc4icv.jpg" alt="Éclat Gastronomique Interior" class="custom-hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section - Exclusivity Éclat Cards -->
+    <section class="custom-info-section" id="exclusivity">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2>Exclusivity Éclat</h2>
+                <p class="custom-section-subtitle">Discover what sets Éclat Gastronomique apart, offering an experience beyond the ordinary.</p>
+            </div>
+            <div class="custom-row">
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-card">
+                        <i class="fas fa-wine-glass custom-card-icon"></i>
+                        <h3 class="custom-card-title">Collection Wine Cellar</h3>
+                        <p class="custom-card-text">A curated selection of vintage wines, rare jewels, and personalized pairings by our expert sommelier.</p>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-card">
+                        <i class="fas fa-seedling custom-card-icon"></i>
+                        <h3 class="custom-card-title">Unique Origin Ingredients</h3>
+                        <p class="custom-card-text">We work directly with artisanal producers to obtain exclusive ingredients, from Italian white truffles to Persian saffron.</p>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-card">
+                        <i class="fas fa-utensils custom-card-icon"></i>
+                        <h3 class="custom-card-title">Private Chef's Table</h3>
+                        <p class="custom-card-text">An exclusive table in the kitchen where you can observe the culinary art in action and enjoy a personalized tasting menu by the chef.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Points Section - Premium Services Cards (Adapting Sales Points to Services) -->
+    <section class="custom-sales-points" id="services">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2 class="whiting">Premium Services</h2>
+                <p class="custom-section-subtitle">Éclat Gastronomique ensures every detail of your visit is perfect with our premium services.</p>
+            </div>
+            <div class="custom-row">
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-sales-point">
+                        <i class="fas fa-concierge-bell custom-sales-icon"></i>
+                        <h3 class="custom-sales-title">Personal Concierge</h3>
+                        <p class="custom-sales-text">From booking to the last detail of the evening, our concierge ensures your experience is flawless.</p>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-sales-point">
+                        <i class="fas fa-parking custom-sales-icon"></i>
+                        <h3 class="custom-sales-title">Exclusive Valet Parking</h3>
+                        <p class="custom-sales-text">Arrive in style and comfort with our valet parking service reserved for our esteemed diners.</p>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-sales-point">
+                        <i class="fas fa-users custom-sales-icon"></i>
+                        <h3 class="custom-sales-title">Tailored Private Events</h3>
+                        <p class="custom-sales-text">Sophisticated spaces and personalized menus for unforgettable celebrations, from intimate dinners to grand receptions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section - Unforgettable Experiences Cards (Adapting Sales Points to Experiences) -->
+    <section class="custom-pricing" id="experiences">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2>Unforgettable Experiences</h2>
+                <p class="custom-section-subtitle">Éclat Gastronomique creates moments to remember with unique and tailored experiences.</p>
+            </div>
+            <div class="custom-row">
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-pricing-card">
+                        <h3 class="custom-pricing-title">Exclusive Wine Pairing Nights</h3>
+                        <div class="custom-pricing-price">Sensory Journey</div>
+                        <p class="custom-pricing-description">Immerse yourself in a unique sensory experience where each dish is perfectly paired with exceptional wines.</p>
+                        <ul class="custom-pricing-features">
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Multi-course tasting menu</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Expert sommelier guidance</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Premium wine selections</li>
+                        </ul>
+                        <a href="#book" class="custom-btn custom-btn-primary custom-pricing-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-pricing-card custom-pricing-recommended">
+                        <h3 class="custom-pricing-title">Magical Anniversary Celebrations</h3>
+                        <div class="custom-pricing-price">Cherished Memories</div>
+                        <p class="custom-pricing-description">Create an unforgettable memory for your anniversary in an environment of luxury and sophistication.</p>
+                        <ul class="custom-pricing-features">
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Personalized menus</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Luxurious setting</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Dedicated event planning</li>
+                        </ul>
+                        <a href="#book" class="custom-btn custom-btn-primary custom-pricing-btn">Plan Your Celebration</a>
+                    </div>
+                </div>
+                <div class="custom-col-3 custom-col-sm-12">
+                    <div class="custom-pricing-card">
+                        <h3 class="custom-pricing-title">Distinguished Corporate Events</h3>
+                        <div class="custom-pricing-price">Impress & Connect</div>
+                        <p class="custom-pricing-description">Impress your clients and partners with corporate events in an elegant and professional atmosphere.</p>
+                        <ul class="custom-pricing-features">
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Professional event spaces</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Menus tailored to expectations</li>
+                            <li class="custom-pricing-feature"><i class="fas fa-check"></i> Impeccable service</li>
+                        </ul>
+                        <a href="#book" class="custom-btn custom-btn-primary custom-pricing-btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="custom-comparison" id="comparison">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2>Éclat vs. The Ordinary</h2>
+                <p class="custom-section-subtitle">Discover the difference between a dinner and an unforgettable gastronomic experience.</p>
+            </div>
+            <div class="custom-row">
+                <div class="custom-col-sm-12">
+                    <table class="custom-comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Éclat Gastronomique</th>
+                                <th>Conventional Restaurant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ingredients</td>
+                                <td class="custom-highlight-cell">Unique Origin & Artisanal</td>
+                                <td>General Market</td>
+                            </tr>
+                            <tr>
+                                <td>Menu</td>
+                                <td class="custom-highlight-cell">Tasting & Personalized</td>
+                                <td>Standard Menu</td>
+                            </tr>
+                            <tr>
+                                <td>Service</td>
+                                <td class="custom-highlight-cell">Concierge & Dedicated Sommelier</td>
+                                <td>Standard Service</td>
+                            </tr>
+                            <tr>
+                                <td>Atmosphere</td>
+                                <td class="custom-highlight-cell">Elegance & Exclusivity</td>
+                                <td>Generic</td>
+                            </tr>
+                            <tr>
+                                <td>Experience</td>
+                                <td class="custom-highlight-cell">Memorability & Culinary Art</td>
+                                <td>Everyday Dinner</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="custom-testimonials" id="testimonials">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2 class="whiting">Voices of Our Guests</h2>
+                <p class="custom-section-subtitle">Don't just take our word for it; hear what our discerning guests are saying about Éclat Gastronomique.</p>
+            </div>
+            <div class="custom-testimonial-carousel">
+                <div class="custom-testimonial-container" id="testimonial-slider">
+                    <div class="custom-testimonial">
+                        <div class="custom-testimonial-content">
+                            <i class="fas fa-quote-right custom-testimonial-quote"></i>
+                            <p class="custom-testimonial-text">"Éclat Gastronomique is not just a restaurant, it is an artistic experience in itself. The chef's creativity, the wine selection, and the sublime atmosphere create a symphony for the senses. A truly exceptional place."</p>
+                            <div class="custom-testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Alexandra Sterling" class="custom-testimonial-avatar">
+                                <div class="custom-testimonial-info">
+                                    <h4 class="custom-testimonial-name">Alexandra Sterling</h4>
+                                    <p class="custom-testimonial-title">Art Collector & Foodie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-testimonial">
+                        <div class="custom-testimonial-content">
+                            <i class="fas fa-quote-right custom-testimonial-quote"></i>
+                            <p class="custom-testimonial-text">"I have dined in the best restaurants in the world, and Éclat Gastronomique stands out. The service is impeccable, the food is innovative and delicious, and the wine cellar is simply impressive. A hidden gem that deserves to be discovered."</p>
+                            <div class="custom-testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Jean-Pierre Dubois" class="custom-testimonial-avatar">
+                                <div class="custom-testimonial-info">
+                                    <h4 class="custom-testimonial-name">Jean-Pierre Dubois</h4>
+                                    <p class="custom-testimonial-title">Businessman & Global Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-testimonial">
+                        <div class="custom-testimonial-content">
+                            <i class="fas fa-quote-right custom-testimonial-quote"></i>
+                            <p class="custom-testimonial-text">"Éclat Gastronomique is the quintessence of elegance. Every detail, from the decoration to the presentation of the dishes, reflects exquisite taste. It is the perfect place for a special night, where every moment becomes a precious memory."</p>
+                            <div class="custom-testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Isabella Visconti" class="custom-testimonial-avatar">
+                                <div class="custom-testimonial-info">
+                                    <h4 class="custom-testimonial-name">Isabella Visconti</h4>
+                                    <p class="custom-testimonial-title">Haute Couture Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-testimonial-controls">
+                    <button class="custom-testimonial-arrow" id="testimonial-prev"><i class="fas fa-arrow-left"></i></button>
+                    <button class="custom-testimonial-arrow" id="testimonial-next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="custom-faqs" id="faq">
+        <div class="custom-container">
+            <div class="custom-section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p class="custom-section-subtitle">Everything you need to know before your visit to Éclat Gastronomique.</p>
+            </div>
+            <div class="custom-row">
+                <div class="custom-col-sm-12">
+                    <div class="custom-faq-item">
+                        <div class="custom-faq-question">
+                            <h3>What type of dress code is expected at Éclat Gastronomique?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="custom-faq-answer">
+                            <p>We expect an elegant formal dress code. Gentlemen are encouraged to wear a suit or blazer, and ladies to opt for cocktail dresses or sophisticated ensembles.</p>
+                        </div>
+                    </div>
+                    <div class="custom-faq-item">
+                        <div class="custom-faq-question">
+                            <h3>How far in advance should I make my reservation?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="custom-faq-answer">
+                            <p>Due to the exclusivity of our experience and limited demand, we recommend making your reservation at least several weeks in advance, especially for weekend dinners.</p>
+                        </div>
+                    </div>
+                    <div class="custom-faq-item">
+                        <div class="custom-faq-question">
+                            <h3>Do you offer options for special diets or allergies?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="custom-faq-answer">
+                            <p>Yes, our executive chef is happy to adapt menus to meet special dietary needs or allergies. Please notify these needs at the time of booking.</p>
+                        </div>
+                    </div>
+                    <div class="custom-faq-item">
+                        <div class="custom-faq-question">
+                            <h3>Is it possible to request a surprise tasting menu?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="custom-faq-answer">
+                            <p>Absolutely. We invite you to request our "Carte Blanche" tasting menu, where the chef will create a personalized and surprise culinary experience for your table.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="custom-newsletter" id="newsletter">
+        <div class="custom-container">
+            <h2 class="custom-newsletter-title">Subscribe to Our Newsletter</h2>
+            <p class="custom-newsletter-subtitle">Stay updated with the latest news, exclusive offers, and upcoming events at Éclat Gastronomique.</p>
+            <form class="custom-newsletter-form">
+                <input type="email" class="custom-newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="custom-newsletter-btn">Subscribe Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+        <div class="custom-container custom-footer-main">
+            <div class="custom-row">
+                <div class="custom-col-4 custom-col-sm-12">
+                    <a href="#" class="custom-footer-logo">Éclat <span>Gastronomique</span></a>
+                    <p class="custom-footer-about">Éclat Gastronomique is dedicated to providing an unparalleled dining experience, where culinary artistry meets elegant ambiance and impeccable service.</p>
+                    <div class="custom-footer-social">
+                        <a href="#" class="custom-footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="custom-footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="custom-footer-social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="custom-col-2 custom-col-sm-6">
+                    <h4 class="custom-footer-heading">Quick Links</h4>
+                    <ul class="custom-footer-links">
+                        <li class="custom-footer-link"><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li class="custom-footer-link"><a href="#exclusivity"><i class="fas fa-chevron-right"></i> Exclusivity</a></li>
+                        <li class="custom-footer-link"><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li class="custom-footer-link"><a href="#experiences"><i class="fas fa-chevron-right"></i> Experiences</a></li>
+                        <li class="custom-footer-link"><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="custom-col-3 custom-col-sm-6">
+                    <h4 class="custom-footer-heading">Contact Us</h4>
+                    <ul class="custom-footer-links">
+                        <li class="custom-footer-contact-item">
+                            <i class="fas fa-map-marker-alt custom-footer-contact-icon"></i>
+                            <div class="custom-footer-contact-text">123 Elegance Street, Culinary City, USA</div>
+                        </li>
+                        <li class="custom-footer-contact-item">
+                            <i class="fas fa-phone custom-footer-contact-icon"></i>
+                            <div class="custom-footer-contact-text">+1 555-123-4567</div>
+                        </li>
+                        <li class="custom-footer-contact-item">
+                            <i class="fas fa-envelope custom-footer-contact-icon"></i>
+                            <div class="custom-footer-contact-text">info@eclatgastronomique.com</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="custom-footer-bottom">
+            <p class="custom-footer-copyright">© 2024 Éclat Gastronomique. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            const navbar = document.querySelector('.custom-navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('custom-navbar-scrolled');
+                } else {
+                    navbar.classList.remove('custom-navbar-scrolled');
+                }
+            });
+
+            // Hamburger menu
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            if (hamburgerIcon && navLinks) {
+                hamburgerIcon.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburgerIcon.classList.toggle('active'); // Optional: for hamburger icon animation
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.custom-nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - navbar.offsetHeight, // Adjust for fixed navbar height
+                            behavior: 'smooth'
+                        });
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active'); // Close nav menu on mobile after click
+                            hamburgerIcon.classList.remove('active'); // Optional: for hamburger icon animation
+                        }
+                    }
+                });
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.custom-faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('custom-faq-active');
+                });
+            });
+
+             // Testimonial Carousel
+            let testimonialIndex = 0;
+            const testimonialsContainer = document.getElementById('testimonial-slider');
+            const testimonials = document.querySelectorAll('.custom-testimonial');
+            const prevButton = document.getElementById('testimonial-prev');
+            const nextButton = document.getElementById('testimonial-next');
+            const testimonialCount = testimonials.length;
+
+            function updateTestimonialCarousel() {
+                testimonialsContainer.style.transform = `translateX(${-testimonialIndex * 100}%)`;
+            }
+
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    testimonialIndex = (testimonialIndex > 0) ? testimonialIndex - 1 : testimonialCount - 1;
+                    updateTestimonialCarousel();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    testimonialIndex = (testimonialIndex < testimonialCount - 1) ? testimonialIndex + 1 : 0;
+                    updateTestimonialCarousel();
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
