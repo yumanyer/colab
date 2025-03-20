@@ -190,6 +190,8 @@
       position: relative;
       overflow: hidden;
       padding-top: 70px;
+      background-image: url("https://res.cloudinary.com/doackpmhu/image/upload/v1741200016/burger_kyb7zo.jpg");
+        background-position: center;
         }
       
         .hero-bg {
@@ -218,6 +220,9 @@
       margin: 0 auto;
       text-align: center;
       animation: fadeIn 1.5s ease-out;
+      background-color: #0000007d;
+    border-radius: 60px;
+    border: 1px solid  wheat;
         }
       
         @keyframes fadeIn {
@@ -607,6 +612,7 @@
         .testimonial-carousel {
             position: relative;
             padding: 0 50px;
+            overflow: hidden;
         }
       
         .testimonial-track {
@@ -1241,8 +1247,8 @@
   
     <!-- Hero Section -->
     <section id="hero" class="hero">
-  <div class="hero-bg"></div>
-  <div class="container hero-content">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
       <h1 class="hero-title">Unleash Your Inner Chef with <span class="text-gradient">Ctrl+Alt+Eat</span></h1>
       <p class="hero-subtitle">The ultimate platform for culinary innovation and byte-sized recipes.</p>
       <p class="hero-description">From coding recipes to crafting delicious dishes, Ctrl+Alt+Eat is your all-in-one solution to bridge the gap between technology and gastronomy. Explore a world where every meal is a masterpiece, and every byte is bursting with flavor.</p>
@@ -1250,7 +1256,7 @@
           <a href="#pricing" class="btn btn-primary">Get Started Now</a>
           <a href="#features" class="btn btn-secondary">Learn More</a>
       </div>
-  </div>
+        </div>
     </section>
   
     <!-- Features Section -->
@@ -1295,32 +1301,36 @@
     </section>
   
     <!-- Countdown Section -->
-    <section class="countdown">
-  <div class="container">
+<section class="countdown">
+    <div class="container">
       <h2 class="countdown-title">Limited Time Launch Offer!</h2>
       <p class="countdown-subtitle">Get early access and exclusive discounts. Offer ends in:</p>
+      
       <div class="countdown-timer">
-          <div class="countdown-item">
-              <div class="countdown-number">25</div>
-              <div class="countdown-label">Days</div>
-          </div>
-          <div class="countdown-item">
-              <div class="countdown-number">10</div>
-              <div class="countdown-label">Hours</div>
-          </div>
-          <div class="countdown-item">
-              <div class="countdown-number">59</div>
-              <div class="countdown-label">Minutes</div>
-          </div>
-          <div class="countdown-item">
-              <div class="countdown-number">32</div>
-              <div class="countdown-label">Seconds</div>
-          </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
       </div>
-      <p class="countdown-message">Don't miss out on becoming a founding member of <span class="countdown-highlight">Ctrl+Alt+Eat</span> and revolutionize your kitchen experience!</p>
+  
+      <p class="countdown-message">
+        Don't miss out on becoming a founding member of <span class="countdown-highlight">Ctrl+Alt+Eat</span> and revolutionize your kitchen experience!
+      </p>
       <a href="#pricing" class="btn btn-primary">Claim Your Discount Now</a>
-  </div>
-    </section>
+    </div>
+  </section>
   
     <!-- Sales Channels Section -->
     <section class="section sales-channels">
@@ -1474,7 +1484,7 @@
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-image">
-                                    <img src="https://via.placeholder.com/150" alt="User 1">
+                                    <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="User 1">
                                 </div>
                                 <div class="author-info">
                                     <h4 class="author-name">Jane Doe</h4>
@@ -1490,7 +1500,7 @@
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-image">
-                                    <img src="https://via.placeholder.com/150" alt="User 2">
+                                    <img src="https://randomuser.me/api/portraits/men/53.jpg" alt="User 2">
                                 </div>
                                 <div class="author-info">
                                     <h4 class="author-name">John Smith</h4>
@@ -1506,7 +1516,7 @@
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-image">
-                                    <img src="https://via.placeholder.com/150" alt="User 3">
+                                    <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="User 3">
                                 </div>
                                 <div class="author-info">
                                     <h4 class="author-name">Alice Johnson</h4>
@@ -1640,7 +1650,7 @@
           </div>
       </div>
       <div class="footer-bottom">
-          <p class="footer-copyright">© 2024 Ctrl+Alt+Eat. All Rights Reserved.</p>
+          <p class="footer-copyright">© 2025 Ctrl+Alt+Eat. All Rights Reserved.</p>
           <div class="footer-policy">
               <a href="#">Terms of Use</a>
               <a href="#">Privacy Policy</a>
@@ -1690,70 +1700,84 @@
             });
         });
       
-        // Testimonial Carousel
-        const track = document.querySelector('.testimonial-track');
-        const slides = Array.from(track.children);
-        const prevButton = document.querySelector('.carousel-btn.prev');
-        const nextButton = document.querySelector('.carousel-btn.next');
+       // Testimonial Carousel
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.testimonial-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
+    
+    let slideIndex = 0;
+    const totalSlides = slides.length;
+    
+    // Función para mover el carrusel
+    const moveToSlide = (index) => {
+        if (index < 0) {
+            slideIndex = totalSlides - 1; // Ir al último slide si se retrocede en el primer slide
+        } else if (index >= totalSlides) {
+            slideIndex = 0; // Volver al primer slide si se avanza después del último
+        } else {
+            slideIndex = index;
+        }
+
         const slideWidth = slides[0].offsetWidth;
-        let slideIndex = 0;
-      
-        const setSlidePosition = (slide, index) => {
-            slide.style.left = slideWidth * index + 'px';
-        }
-      
-        slides.forEach(setSlidePosition);
-      
-        const moveToSlide = (track, currentSlide, targetSlide) => {
-            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-            currentSlide.classList.remove('current-slide');
-            targetSlide.classList.add('current-slide');
-        }
-      
-        const updateDots = (currentIndex) => {
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[currentIndex].classList.add('active');
-        }
-      
-        // Next button click
-        nextButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide');
-            let nextSlide = currentSlide.nextElementSibling;
-            if (!nextSlide) {
-                nextSlide = slides[0]; // Wrap around to the first slide
-            }
-            moveToSlide(track, currentSlide, nextSlide);
-        });
-      
-        // Prev button click
-        prevButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide');
-            let prevSlide = currentSlide.previousElementSibling;
-            if (!prevSlide) {
-                prevSlide = slides[slides.length - 1]; // Wrap around to the last slide
-            }
-            moveToSlide(track, currentSlide, prevSlide);
-        });
-      
-        // ROI Calculator
-        const calculateBtn = document.getElementById('calculate-btn');
-        const resultsDiv = document.querySelector('.calculator-results');
-        const savingsValueSpan = document.getElementById('savings-value');
-      
-        calculateBtn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent form submission
-        
-            const cookFrequency = parseInt(document.getElementById('cook-frequency').value) || 0;
-            const timePerRecipe = parseInt(document.getElementById('time-per-recipe').value) || 0;
-            const hourlyRate = parseFloat(document.getElementById('hourly-rate').value) || 0;
-            const wastePercentage = parseInt(document.getElementById('waste-percentage').value) || 0;
-        
-            const weeklyTimeSavedHours = (cookFrequency * timePerRecipe) / 60 * (wastePercentage / 100);
-            const annualSavings = weeklyTimeSavedHours * hourlyRate * 52;
-        
-            savingsValueSpan.textContent = annualSavings.toFixed(2);
-            resultsDiv.style.display = 'block';
-        });
+        track.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+
+        slides.forEach(slide => slide.classList.remove('current-slide'));
+        slides[slideIndex].classList.add('current-slide');
+    };
+
+    // Inicializar carrusel
+    moveToSlide(slideIndex);
+
+    // Evento para botón "Siguiente"
+    nextButton.addEventListener('click', () => {
+        moveToSlide(slideIndex + 1);
+    });
+
+    // Evento para botón "Anterior"
+    prevButton.addEventListener('click', () => {
+        moveToSlide(slideIndex - 1);
+    });
+
+    // Hacer que las tarjetas se ajusten al ancho al cambiar el tamaño de la ventana
+    window.addEventListener('resize', () => {
+        moveToSlide(slideIndex);
+    });
+});
+
+   // Definir la variable para el intervalo
+let countdownInterval;
+
+function updateCountdown() {
+    const now = new Date();
+    const endDate = new Date();
+    endDate.setDate(now.getDate() + 30); // El temporizador durará 30 días
+    endDate.setHours(23, 59, 59, 999); // Se detiene a las 23:59:59 del día final
+
+    const timeLeft = endDate.getTime() - now.getTime();
+
+    if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        document.querySelector('.countdown-timer').innerHTML = '<div style="text-align:center; font-size: 1.5rem;">Offer Expired!</div>';
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+// Iniciar el temporizador
+updateCountdown(); // Ejecutar una vez para establecer los valores iniciales
+countdownInterval = setInterval(updateCountdown, 1000); // Actualizar cada segundo
+
       
     </script>
 </body>
