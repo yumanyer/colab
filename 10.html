@@ -57,6 +57,8 @@
         .custom-row {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            gap: 15px;
         }
 
         .custom-col {
@@ -70,10 +72,9 @@
             padding: 0 15px;
         }
 
-        .custom-col-3 {
-            flex: 0 0 33.333333%;
-            max-width: 33.333333%;
-            padding: 0 15px;
+            .custom-col-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
         }
 
         .custom-col-4 {
@@ -120,7 +121,7 @@
         /* Navbar - Semi-transparent that becomes opaque on scroll */
         .custom-navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
             padding: 20px 40px;
             width: 100%;
@@ -152,6 +153,7 @@
         .custom-nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .custom-nav-link {
@@ -205,6 +207,7 @@
             align-items: center;
             background-color: #101820;
             padding-top: 80px;
+            overflow-x: auto;
         }
 
         .custom-hero-content {
@@ -607,10 +610,11 @@
         .custom-comparison {
             padding: 100px 0;
             background-color: #fff;
+            overflow-x: auto;
         }
 
         .custom-comparison-table {
-            width: 100%;
+            width: 100% !important;
             border-collapse: collapse;
             margin-bottom: 50px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -1068,7 +1072,12 @@
         .custom-whatsapp-btn:hover {
             background-color: #128c7e;
         }
-
+        .container-table{
+    display: flex;
+    justify-content: center;
+    overflow-x: auto; /* ADDED: Overflow for container table */
+    width: 100%; /* ADDED: Ensure container table takes full width */
+}
        
 
         /* Animations */
@@ -1093,6 +1102,24 @@
         }
 
         /* Responsive Design */
+
+        @media (max-width: 1600px) {
+            .custom-row{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 1350px) {
+            .custom-col-3{
+                width: 48%;
+            }
+            .custom-sales-point,
+    .custom-pricing-card {
+        padding: 15px;
+        margin: 10px auto;
+    }
+        }
         @media (max-width: 992px) {
             .custom-heading-1 {
                 font-size: 3rem;
@@ -1183,6 +1210,9 @@
 
             .custom-testimonial-content {
                 padding: 30px;
+            }
+            .custom-col-3{
+                width: 100%;
             }
         }
 
@@ -1290,8 +1320,8 @@
         </div>
     </section>
 
-    <!-- Sales Points Section - Premium Services Cards (Adapting Sales Points to Services) -->
-    <section class="custom-sales-points" id="services">
+      <!-- Sales Points Section - Premium Services Cards (Adapting Sales Points to Services) -->
+      <section class="custom-sales-points" id="services">
         <div class="custom-container">
             <div class="custom-section-title">
                 <h2 class="whiting">Premium Services</h2>
@@ -1302,21 +1332,21 @@
                     <div class="custom-sales-point">
                         <i class="fas fa-concierge-bell custom-sales-icon"></i>
                         <h3 class="custom-sales-title">Personal Concierge</h3>
-                        <p class="custom-sales-text">From booking to the last detail of the evening, our concierge ensures your experience is flawless.</p>
+                        <p class="custom-sales-text">From the moment you consider dining with us until the end of your evening, our dedicated personal concierge is at your service.  Handling reservations, special requests, and ensuring a seamless and luxurious experience tailored to your preferences, allowing you to relax and anticipate an unforgettable gastronomic journey.</p>
                     </div>
                 </div>
                 <div class="custom-col-3 custom-col-sm-12">
                     <div class="custom-sales-point">
                         <i class="fas fa-parking custom-sales-icon"></i>
                         <h3 class="custom-sales-title">Exclusive Valet Parking</h3>
-                        <p class="custom-sales-text">Arrive in style and comfort with our valet parking service reserved for our esteemed diners.</p>
+                        <p class="custom-sales-text">Arrive in unparalleled style and comfort with our exclusive valet parking service, reserved solely for our esteemed diners.  Forget the concerns of parking in the city; upon arrival, you will be greeted by our professional valet team ready to take care of your vehicle, ensuring a smooth and sophisticated start to your Éclat Gastronomique experience.</p>
                     </div>
                 </div>
                 <div class="custom-col-3 custom-col-sm-12">
                     <div class="custom-sales-point">
                         <i class="fas fa-users custom-sales-icon"></i>
                         <h3 class="custom-sales-title">Tailored Private Events</h3>
-                        <p class="custom-sales-text">Sophisticated spaces and personalized menus for unforgettable celebrations, from intimate dinners to grand receptions.</p>
+                        <p class="custom-sales-text">Host your most sophisticated and memorable private events in our exclusive spaces. From intimate dinners to grand receptions, Éclat Gastronomique offers fully customizable private event services. Our expert team will work with you to design personalized menus and atmospheres, ensuring every detail is perfect for your unforgettable celebration or distinguished corporate gathering.</p>
                     </div>
                 </div>
             </div>
@@ -1381,7 +1411,7 @@
                 <h2>Éclat vs. The Ordinary</h2>
                 <p class="custom-section-subtitle">Discover the difference between a dinner and an unforgettable gastronomic experience.</p>
             </div>
-            <div class="custom-row">
+            <div class="custom-row container-table">
                 <div class="custom-col-sm-12">
                     <table class="custom-comparison-table">
                         <thead>
